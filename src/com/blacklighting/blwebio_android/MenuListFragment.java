@@ -33,11 +33,13 @@ public class MenuListFragment extends ListFragment {
 		weiboCategories = new ArrayList<MenuListFragment.SampleItem>();
 		recoveryWeiboCategoryFormDB();
 
-		SampleAdapter adapter = new SampleAdapter(getActivity());
 		for (int i = 0; i < 20; i++) {
-			adapter.add(new SampleItem("Sample List",
+			weiboCategories.add(new SampleItem("Sample List",
 					android.R.drawable.ic_menu_search));
 		}
+
+		MenuListAdaper adapter = new MenuListAdaper(getActivity());
+		
 		setListAdapter(adapter);
 	}
 
@@ -76,7 +78,11 @@ public class MenuListFragment extends ListFragment {
 
 		@Override
 		public Object getItem(int position) {
-			return weiboCategories.get(position);
+			if (position == 0) {
+				return null;
+			} else {
+				return weiboCategories.get(position - 1);
+			}
 		}
 
 		@Override
@@ -99,11 +105,11 @@ public class MenuListFragment extends ListFragment {
 			if (position != 0) {
 				TextView title = (TextView) convertView
 						.findViewById(R.id.row_title);
-				title.setText(weiboCategories.get(position).tag);
+				title.setText(weiboCategories.get(position-1).tag);
 			} else {
 				ImageView accountPhoto = (ImageView) convertView
 						.findViewById(R.id.accountPhoto);
-				
+
 			}
 			return convertView;
 		}
