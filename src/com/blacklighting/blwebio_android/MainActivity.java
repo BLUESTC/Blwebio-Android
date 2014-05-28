@@ -10,29 +10,37 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
 import android.view.Menu;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Toast;
 
-public class MainActivity extends SlidingFragmentActivity {
-	protected ListFragment mFrag;
+public class MainActivity extends SlidingFragmentActivity implements
+		MenuListFragment.OnMenuIteamClickListener {
+	protected MenuListFragment mFrag;
 	private CanvasTransformer mTransformer = new CanvasTransformer() {
 		@Override
 		public void transformCanvas(Canvas canvas, float percentOpen) {
 			canvas.scale(percentOpen, 1, 0, 0);
 		}
 	};
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// set the Behind View
 		setBehindContentView(R.layout.menu_frame);
 		if (savedInstanceState == null) {
-			FragmentTransaction t = this.getSupportFragmentManager().beginTransaction();
+			FragmentTransaction t = this.getSupportFragmentManager()
+					.beginTransaction();
 			mFrag = new MenuListFragment();
 			t.replace(R.id.menu_frame, mFrag);
 			t.commit();
 		} else {
-			mFrag = (ListFragment)this.getSupportFragmentManager().findFragmentById(R.id.menu_frame);
+			mFrag = (MenuListFragment) this.getSupportFragmentManager()
+					.findFragmentById(R.id.menu_frame);
 		}
-		
+
 		// customize the SlidingMenu
 		SlidingMenu sm = getSlidingMenu();
 		sm.setShadowWidthRes(R.dimen.shadow_width);
@@ -42,13 +50,11 @@ public class MainActivity extends SlidingFragmentActivity {
 		sm.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
-		
+
 		setContentView(R.layout.content_frame);
-		getSupportFragmentManager()
-		.beginTransaction()
-		.replace(R.id.content_frame, new MenuListFragment())
-		.commit();
-		
+		getSupportFragmentManager().beginTransaction()
+				.replace(R.id.content_frame, new WeiboListFragment()).commit();
+
 		setSlidingActionBarEnabled(true);
 		sm.setBehindScrollScale(0.0f);
 		sm.setBehindCanvasTransformer(mTransformer);
@@ -60,6 +66,7 @@ public class MainActivity extends SlidingFragmentActivity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case android.R.id.home:
@@ -68,4 +75,11 @@ public class MainActivity extends SlidingFragmentActivity {
 		}
 		return super.onOptionsItemSelected((android.view.MenuItem) item);
 	}
+
+	@Override
+	public void onMenuIteamClick(AdapterView<?> l, View v, int position, long id) {
+		// TODO Auto-generated method stub
+		Toast.makeText(getApplicationContext(), ""+position, Toast.LENGTH_SHORT).show();
+	}
+
 }

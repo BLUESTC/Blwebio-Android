@@ -3,27 +3,48 @@ package com.blacklighting.blwebio_android;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 /**
  * @author 亚军
  * 
  */
-public class MenuListFragment extends ListFragment {
-
+public class MenuListFragment extends Fragment {
+	
+	ListView list;
+	ImageView accountPhoto;
 	List<SampleItem> weiboCategories;
+	OnMenuIteamClickListener menuClickListener;
+	
+	@Override
+	public void onAttach(Activity activity) {
+		super.onAttach(activity);
+        try {
+        	menuClickListener = (OnMenuIteamClickListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement OnMenuIteamClickListener");
+        }
+	}
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		return inflater.inflate(R.layout.list, null);
+		View rootView=inflater.inflate(R.layout.list, container,false);
+		list=(ListView) rootView.findViewById(R.id.list);
+		accountPhoto=(ImageView) rootView.findViewById(R.id.account_photo);
+		return rootView;
 	}
 
 	public void onActivityCreated(Bundle savedInstanceState) {
@@ -33,13 +54,22 @@ public class MenuListFragment extends ListFragment {
 		recoveryWeiboCategoryFormDB();
 
 		for (int i = 0; i < 20; i++) {
-			weiboCategories.add(new SampleItem("Sample List",
+			weiboCategories.add(new SampleItem("Sample List"+i,
 					android.R.drawable.ic_menu_search));
 		}
 
 		MenuListAdaper adapter = new MenuListAdaper(getActivity());
 		
-		setListAdapter(adapter);
+		list.setAdapter(adapter);
+		list.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> l, View v, int position,
+					long id) {
+				// TODO Auto-generated method stub
+				menuClickListener.onMenuIteamClick(l, v, position, id);
+			}
+		});
 	}
 
 	/**
@@ -72,7 +102,7 @@ public class MenuListFragment extends ListFragment {
 
 		@Override
 		public int getCount() {
-			return weiboCategories.size() + 1;
+			return weiboCategories.size() ;
 		}
 
 		@Override
@@ -80,7 +110,7 @@ public class MenuListFragment extends ListFragment {
 			if (position == 0) {
 				return null;
 			} else {
-				return weiboCategories.get(position - 1);
+				return weiboCategories.get(position);
 			}
 		}
 
@@ -92,45 +122,39 @@ public class MenuListFragment extends ListFragment {
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			if (convertView == null) {
-				if (position != 0) {
-					convertView = LayoutInflater.from(context).inflate(
-							R.layout.menu_row, null);
-				} else {
-					convertView = LayoutInflater.from(context).inflate(
-							R.layout.acount_photo_row, null);
-				}
+//				if (position != 0) {
+//					convertView = LayoutInflater.from(context).inflate(
+//							R.layout.menu_row, null);
+//				} else {
+//					convertView = LayoutInflater.from(context).inflate(
+//							R.layout.acount_photo_row, null);
+//				}
+				convertView = LayoutInflater.from(context).inflate(
+						R.layout.menu_row, null);
 			}
 
-			if (position != 0) {
-				TextView title = (TextView) convertView
-						.findViewById(R.id.row_title);
-				title.setText(weiboCategories.get(position-1).tag);
-			} else {
-				ImageView accountPhoto = (ImageView) convertView
-						.findViewById(R.id.accountPhoto);
-
-			}
+			TextView title = (TextView) convertView
+					.findViewById(R.id.row_title);
+			title.setText(weiboCategories.get(position).tag);
+			
+//			if (position != 0) {
+//				TextView title = (TextView) convertView
+//						.findViewById(R.id.row_title);
+//				title.setText(weiboCategories.get(position).tag);
+//			} else {
+//				ImageView accountPhoto = (ImageView) convertView
+//						.findViewById(R.id.accountPhoto);
+//
+//			}
 			return convertView;
 		}
 	}
-
-//	public class SampleAdapter extends ArrayAdapter<SampleItem> {
-//
-//		public SampleAdapter(Context context) {
-//			super(context, 0);
-//		}
-//
-//		public View getView(int position, View convertView, ViewGroup parent) {
-//			if (convertView == null) {
-//				convertView = LayoutInflater.from(getContext()).inflate(
-//						R.layout.menu_row, null);
-//			}
-//			TextView title = (TextView) convertView
-//					.findViewById(R.id.row_title);
-//			title.setText(getItem(position).tag);
-//
-//			return convertView;
-//		}
-//
-//	}
+	/**
+	 * @author 亚军
+	 *	处理点击菜单的接口类
+	 */
+	public interface OnMenuIteamClickListener{
+		public void onMenuIteamClick(AdapterView<?> l,View v ,int position,long id);
+	}
+	
 }
