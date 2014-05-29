@@ -4,9 +4,9 @@
 package com.blacklighting.blwebio_android.internet;
 
 /**
- * statusnet API£¬ÏêÇé¼ûÏÂÃæµÄÍøÖ·£¬Èç¹ûÃ»ÓĞÌá¼°£¬POSTÓëGET¶¼ÊÇ¿ÉĞĞµÄ£¬²ÎÊıÃ»ÓĞÌá¼°µÄ»°¿ÉÑ¡
+ * statusnet APIï¼Œè¯¦æƒ…è§ä¸‹é¢çš„ç½‘å€ï¼Œå¦‚æœæ²¡æœ‰æåŠï¼ŒPOSTä¸GETéƒ½æ˜¯å¯è¡Œçš„ï¼Œå‚æ•°æ²¡æœ‰æåŠçš„è¯å¯é€‰
  * 
- * @author ÑÇ¾ü
+ * @author äºšå†›
  * @see https://dev.twitter.com/docs/api/1.1
  * @see http://status.net/wiki/Twitter-compatible_API
  */
@@ -14,12 +14,12 @@ public class API {
 	public final static String API_FORMAT = "json";
 	public final static String API_ROOT = "http://studio.scie.in/blacklighting/BLK/statusnet-1.1.1/index.php/api/";
 
-	// ÒÔÏÂÊÇtwitter ÒÆÖ²API£¬×¢Òâ£¬ÓĞĞ©Ã»ÓĞÊµÏÖ
-	// Ïê¼û http://status.net/wiki/Twitter-compatible_API
+	// ä»¥ä¸‹æ˜¯twitter ç§»æ¤APIï¼Œæ³¨æ„ï¼Œæœ‰äº›æ²¡æœ‰å®ç°
+	// è¯¦è§ http://status.net/wiki/Twitter-compatible_API
 	// Timeline resources
 	/**
-	 * ·µ»ØÎ´ÉèÖÃË½ÃÜµÄÓÃ»§ ( ±ØĞëÓĞ×Ô¶¨ÒåµÄÓÃ»§Í·Ïñ ) µÄ×î½ü20ÌõÏûÏ¢£¬¸Ã·½·¨²»ĞèÒªÉí·İÈÏÖ¤¡£ Ö§³Ö¸ñÊ½(format)£ºxml, json,
-	 * rss, atom ²ÎÊıÁĞ±í£ºÎŞ¡£
+	 * è¿”å›æœªè®¾ç½®ç§å¯†çš„ç”¨æˆ· ( å¿…é¡»æœ‰è‡ªå®šä¹‰çš„ç”¨æˆ·å¤´åƒ ) çš„æœ€è¿‘20æ¡æ¶ˆæ¯ï¼Œè¯¥æ–¹æ³•ä¸éœ€è¦èº«ä»½è®¤è¯ã€‚ æ”¯æŒæ ¼å¼(format)ï¼šxml, json,
+	 * rss, atom å‚æ•°åˆ—è¡¨ï¼šæ— ã€‚
 	 */
 	public final static String PUBLICK_TIME_LINE_API = API_ROOT
 			+ "statuses/public_timeline." + API_FORMAT;
@@ -33,7 +33,7 @@ public class API {
 	 * for users that follow many users or follow users who tweet
 	 * frequently.</br>
 	 * 
-	 * Parameters£º </br><strong> count (optional)</strong> </br> Specifies the
+	 * Parametersï¼š </br><strong> count (optional)</strong> </br> Specifies the
 	 * number of records to retrieve. Must be less than or equal to 200.
 	 * Defaults to 20. </br><strong> since_id</strong></br> (optional)Returns
 	 * results with an ID greater than (that is, more recent than) the specified
@@ -48,7 +48,7 @@ public class API {
 	 * object.Example Values: 54321 </br><strong>exclude_replies</strong></br>
 	 * This parameter will prevent replies from appearing in the returned
 	 * timeline. Using exclude_replies with the count parameter will mean you
-	 * will receive up-to count tweets ¡ª this is because the count parameter
+	 * will receive up-to count tweets â€” this is because the count parameter
 	 * retrieves that many tweets before filtering out retweets and
 	 * replies.Example Values: true </br><strong>trim_user</strong></br>When set
 	 * to either true, t or 1, each tweet returned in a timeline will include a
@@ -67,47 +67,47 @@ public class API {
 			+ "statuses/home_timeline." + API_FORMAT;
 
 	/**
-	 * ·µ»Ø×î½ü24Ğ¡Ê±ÄÚµÄ×îĞÂµÄ20ÌõÈÏÖ¤ÓÃ»§¼°ÆäºÃÓÑ¸üĞÂµÄÏûÏ¢¡£ Ö§³Ö¸ñÊ½ ( format ) £ºxml, json, rss, atom
-	 * ²ÎÊıÁĞ±í£º
+	 * è¿”å›æœ€è¿‘24å°æ—¶å†…çš„æœ€æ–°çš„20æ¡è®¤è¯ç”¨æˆ·åŠå…¶å¥½å‹æ›´æ–°çš„æ¶ˆæ¯ã€‚ æ”¯æŒæ ¼å¼ ( format ) ï¼šxml, json, rss, atom
+	 * å‚æ•°åˆ—è¡¨ï¼š
 	 * 
-	 * ¡¡¡¡</br><strong>since_id</strong></br>: ¿ÉÑ¡²ÎÊı£¨Î¢²©ĞÅÏ¢ID£©.
-	 * Ö»·µ»ØID±Èsince_id´ó£¨±Èsince_idÊ±¼äÍíµÄ£©µÄÎ¢²©ĞÅÏ¢ÄÚÈİ¡£
+	 * ã€€ã€€</br><strong>since_id</strong></br>: å¯é€‰å‚æ•°ï¼ˆå¾®åšä¿¡æ¯IDï¼‰.
+	 * åªè¿”å›IDæ¯”since_idå¤§ï¼ˆæ¯”since_idæ—¶é—´æ™šçš„ï¼‰çš„å¾®åšä¿¡æ¯å†…å®¹ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/statuses/friends_timeline.xml?since_id=12345
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/statuses/friends_timeline.xml?since_id=12345
 	 * 
-	 * ¡¡¡¡</br><strong>max_id</strong></br>: ¿ÉÑ¡²ÎÊı£¨Î¢²©ĞÅÏ¢ID£©. ·µ»ØID²»´óÓÚmax_idµÄÎ¢²©ĞÅÏ¢ÄÚÈİ¡£
+	 * ã€€ã€€</br><strong>max_id</strong></br>: å¯é€‰å‚æ•°ï¼ˆå¾®åšä¿¡æ¯IDï¼‰. è¿”å›IDä¸å¤§äºmax_idçš„å¾®åšä¿¡æ¯å†…å®¹ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/statuses/friends_timeline.xml?max_id=54321
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/statuses/friends_timeline.xml?max_id=54321
 	 * 
-	 * ¡¡¡¡</br><strong>count</strong></br>: ¿ÉÑ¡²ÎÊı. Ã¿´Î·µ»ØµÄ×î´ó¼ÇÂ¼Êı£¬²»ÄÜ³¬¹ı200£¬Ä¬ÈÏ20.
+	 * ã€€ã€€</br><strong>count</strong></br>: å¯é€‰å‚æ•°. æ¯æ¬¡è¿”å›çš„æœ€å¤§è®°å½•æ•°ï¼Œä¸èƒ½è¶…è¿‡200ï¼Œé»˜è®¤20.
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/statuses/friends_timeline.xml?count=5
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/statuses/friends_timeline.xml?count=5
 	 * 
-	 * ¡¡¡¡</br><strong>page</br><strong>: ¿ÉÑ¡²ÎÊı.
-	 * ·µ»Ø½á¹ûµÄÒ³ĞòºÅ¡£×¢Òâ£ºÓĞ·ÖÒ³ÏŞÖÆ¡£¸ù¾İÓÃ»§¹Ø×¢¶ÔÏó·¢±íµÄÊıÁ¿£¬Í¨³£×î¶à·µ»Ø1,000Ìõ×îĞÂÎ¢²©·ÖÒ³ÄÚÈİ, Ä¬ÈÏ1
+	 * ã€€ã€€</br><strong>page</br><strong>: å¯é€‰å‚æ•°.
+	 * è¿”å›ç»“æœçš„é¡µåºå·ã€‚æ³¨æ„ï¼šæœ‰åˆ†é¡µé™åˆ¶ã€‚æ ¹æ®ç”¨æˆ·å…³æ³¨å¯¹è±¡å‘è¡¨çš„æ•°é‡ï¼Œé€šå¸¸æœ€å¤šè¿”å›1,000æ¡æœ€æ–°å¾®åšåˆ†é¡µå†…å®¹, é»˜è®¤1
 	 */
 	public final static String FRIENDS_TIME_LINE_API = API_ROOT
 			+ "statuses/friends_timeline." + API_FORMAT;
 
 	/**
-	 * ÏÔÊ¾20Ìõ×î½üµÄ¶ÔÓÃ»§µÄ»Ø¸´ÏûÏ¢£¬ ( ÏûÏ¢Ç°×ºÎª @username )
-	 * ¡£¸ÃAPIÖ»¿ª·Å¸øÈÏÖ¤ÓÃ»§£¬ÇëÇóÆäËûÓÃ»§µÄÊÕµ½µÄ»Ø¸´ÏûÏ¢ÁĞ±íÊÇ·Ç·¨µÄ£¬ÎŞÂÛÆäËûÓÃ»§ÉèÖÃË½ÃÜÓë·ñ¡£ Ö§³Ö¸ñÊ½ ( format ) £ºxml,
-	 * json, rss, atom ²ÎÊıÁĞ±í£º
+	 * æ˜¾ç¤º20æ¡æœ€è¿‘çš„å¯¹ç”¨æˆ·çš„å›å¤æ¶ˆæ¯ï¼Œ ( æ¶ˆæ¯å‰ç¼€ä¸º @username )
+	 * ã€‚è¯¥APIåªå¼€æ”¾ç»™è®¤è¯ç”¨æˆ·ï¼Œè¯·æ±‚å…¶ä»–ç”¨æˆ·çš„æ”¶åˆ°çš„å›å¤æ¶ˆæ¯åˆ—è¡¨æ˜¯éæ³•çš„ï¼Œæ— è®ºå…¶ä»–ç”¨æˆ·è®¾ç½®ç§å¯†ä¸å¦ã€‚ æ”¯æŒæ ¼å¼ ( format ) ï¼šxml,
+	 * json, rss, atom å‚æ•°åˆ—è¡¨ï¼š
 	 * 
-	 * ¡¡¡¡</br><strong>since_id</strong></br>. ¿ÉÑ¡²ÎÊı.
-	 * ·µ»ØID±ÈÊıÖµsince_id´ó£¨±Èsince_idÊ±¼äÍíµÄ£©µÄÌáµ½¡£
+	 * ã€€ã€€</br><strong>since_id</strong></br>. å¯é€‰å‚æ•°.
+	 * è¿”å›IDæ¯”æ•°å€¼since_idå¤§ï¼ˆæ¯”since_idæ—¶é—´æ™šçš„ï¼‰çš„æåˆ°ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/statuses/mentions.xml?since_id=12345
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/statuses/mentions.xml?since_id=12345
 	 * 
-	 * ¡¡¡¡</br><strong>max_id</strong></br>. ¿ÉÑ¡²ÎÊı. ·µ»ØID²»´óÓÚmax_id(Ê±¼ä²»ÍíÓÚmax_id)µÄÌáµ½¡£
+	 * ã€€ã€€</br><strong>max_id</strong></br>. å¯é€‰å‚æ•°. è¿”å›IDä¸å¤§äºmax_id(æ—¶é—´ä¸æ™šäºmax_id)çš„æåˆ°ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/statuses/mentions.xml?max_id=54321
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/statuses/mentions.xml?max_id=54321
 	 * 
-	 * ¡¡¡¡</br><strong>count</strong></br>. ¿ÉÑ¡²ÎÊı. Ã¿´Î·µ»ØµÄ×î´ó¼ÇÂ¼Êı£¨¼´Ò³Ãæ´óĞ¡£©£¬²»´óÓÚ200£¬Ä¬ÈÏÎª20¡£
+	 * ã€€ã€€</br><strong>count</strong></br>. å¯é€‰å‚æ•°. æ¯æ¬¡è¿”å›çš„æœ€å¤§è®°å½•æ•°ï¼ˆå³é¡µé¢å¤§å°ï¼‰ï¼Œä¸å¤§äº200ï¼Œé»˜è®¤ä¸º20ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/statuses/mentions.xml?count=200
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/statuses/mentions.xml?count=200
 	 * 
-	 * ¡¡¡¡</br><strong>page</strong></br>. ¿ÉÑ¡²ÎÊı. ·µ»Ø½á¹ûµÄÒ³ĞòºÅ¡£×¢Òâ£ºÓĞ·ÖÒ³ÏŞÖÆ¡£
+	 * ã€€ã€€</br><strong>page</strong></br>. å¯é€‰å‚æ•°. è¿”å›ç»“æœçš„é¡µåºå·ã€‚æ³¨æ„ï¼šæœ‰åˆ†é¡µé™åˆ¶ã€‚
 	 */
 	public final static String MENTIONS_API = API_ROOT + "statuses/mentions."
 			+ API_FORMAT;
@@ -116,52 +116,52 @@ public class API {
 			+ API_FORMAT;
 
 	/**
-	 * ·µ»ØÈÏÖ¤ÓÃ»§×î½ü24Ğ¡Ê±ÄÚ×îĞÂ¸üĞÂµÄ20ÌõÏûÏ¢£¬Í¬Ñù£¬Í¨¹ı¸ø¶¨userIdOrName²ÎÊı£¬¿ÉÒÔÓÃÀ´ÇëÇóÆäËûÓÃ»§µÄ×î½üµÄÏûÏ¢¸üĞÂ¡£
-	 * ¸ÃAPI¿ÉÒÔ²»ÈÏÖ¤¡£ Ö§³Ö¸ñÊ½ ( format )£ºxml, json, rss, atom ²ÎÊıÁĞ±í£º
+	 * è¿”å›è®¤è¯ç”¨æˆ·æœ€è¿‘24å°æ—¶å†…æœ€æ–°æ›´æ–°çš„20æ¡æ¶ˆæ¯ï¼ŒåŒæ ·ï¼Œé€šè¿‡ç»™å®šuserIdOrNameå‚æ•°ï¼Œå¯ä»¥ç”¨æ¥è¯·æ±‚å…¶ä»–ç”¨æˆ·çš„æœ€è¿‘çš„æ¶ˆæ¯æ›´æ–°ã€‚
+	 * è¯¥APIå¯ä»¥ä¸è®¤è¯ã€‚ æ”¯æŒæ ¼å¼ ( format )ï¼šxml, json, rss, atom å‚æ•°åˆ—è¡¨ï¼š
 	 * 
-	 * ¡¡¡¡</br><strong>id</strong></br>£º ¿ÉÑ¡²ÎÊı. ¸ù¾İÖ¸¶¨ÓÃ»§UID»òÎ¢²©êÇ³ÆÀ´·µ»ØÎ¢²©ĞÅÏ¢¡£
+	 * ã€€ã€€</br><strong>id</strong></br>ï¼š å¯é€‰å‚æ•°. æ ¹æ®æŒ‡å®šç”¨æˆ·UIDæˆ–å¾®åšæ˜µç§°æ¥è¿”å›å¾®åšä¿¡æ¯ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/statuses/user_timeline/12345.xml
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/statuses/user_timeline/12345.xml
 	 * 
-	 * ¡¡¡¡</br><strong>user_id</strong></br>£º ¿ÉÑ¡²ÎÊı.
-	 * ÓÃ»§UID£¬Ö÷ÒªÊÇÓÃÀ´Çø·ÖÓÃ»§UID¸úÎ¢²©êÇ³ÆÒ»Ñù£¬²úÉúÆçÒåµÄÊ±ºò£¬ÌØ±ğÊÇÔÚÎ¢²©êÇ³ÆÎªÊı×Öµ¼ÖÂºÍÓÃ»§Uid·¢ÉúÆçÒå¡£
+	 * ã€€ã€€</br><strong>user_id</strong></br>ï¼š å¯é€‰å‚æ•°.
+	 * ç”¨æˆ·UIDï¼Œä¸»è¦æ˜¯ç”¨æ¥åŒºåˆ†ç”¨æˆ·UIDè·Ÿå¾®åšæ˜µç§°ä¸€æ ·ï¼Œäº§ç”Ÿæ­§ä¹‰çš„æ—¶å€™ï¼Œç‰¹åˆ«æ˜¯åœ¨å¾®åšæ˜µç§°ä¸ºæ•°å­—å¯¼è‡´å’Œç”¨æˆ·Uidå‘ç”Ÿæ­§ä¹‰ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/statuses/user_timeline.xml?user_id=1401881
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/statuses/user_timeline.xml?user_id=1401881
 	 * 
-	 * ¡¡¡¡</br><strong>screen_name</strong></br>£º¿ÉÑ¡²ÎÊı.Î¢²©êÇ³Æ£¬Ö÷ÒªÊÇÓÃÀ´Çø·ÖÓÃ»§UID¸úÎ¢²©êÇ³ÆÒ»Ñù£¬
-	 * ²úÉúÆçÒåµÄÊ±ºò¡£
+	 * ã€€ã€€</br><strong>screen_name</strong></br>ï¼šå¯é€‰å‚æ•°.å¾®åšæ˜µç§°ï¼Œä¸»è¦æ˜¯ç”¨æ¥åŒºåˆ†ç”¨æˆ·UIDè·Ÿå¾®åšæ˜µç§°ä¸€æ ·ï¼Œ
+	 * äº§ç”Ÿæ­§ä¹‰çš„æ—¶å€™ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı:
+	 * ã€€ã€€ç¤ºä¾‹:
 	 * http://api.twitter.com/statuses/user_timeline.xml?screen_name=101010
 	 * 
-	 * ¡¡¡¡</br><strong>since_id</strong></br>£º¿ÉÑ¡²ÎÊı£¨Î¢²©ĞÅÏ¢ID£©.
-	 * Ö»·µ»ØID±Èsince_id´ó£¨±Èsince_idÊ±¼äÍíµÄ£©µÄÎ¢²©ĞÅÏ¢ÄÚÈİ
+	 * ã€€ã€€</br><strong>since_id</strong></br>ï¼šå¯é€‰å‚æ•°ï¼ˆå¾®åšä¿¡æ¯IDï¼‰.
+	 * åªè¿”å›IDæ¯”since_idå¤§ï¼ˆæ¯”since_idæ—¶é—´æ™šçš„ï¼‰çš„å¾®åšä¿¡æ¯å†…å®¹
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/statuses/user_timeline.xml?since_id=12345
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/statuses/user_timeline.xml?since_id=12345
 	 * 
-	 * ¡¡¡¡</br><strong>max_id</strong></br>: ¿ÉÑ¡²ÎÊı£¨Î¢²©ĞÅÏ¢ID£©. ·µ»ØID²»´óÓÚmax_idµÄÎ¢²©ĞÅÏ¢ÄÚÈİ¡£
+	 * ã€€ã€€</br><strong>max_id</strong></br>: å¯é€‰å‚æ•°ï¼ˆå¾®åšä¿¡æ¯IDï¼‰. è¿”å›IDä¸å¤§äºmax_idçš„å¾®åšä¿¡æ¯å†…å®¹ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: Example:
+	 * ã€€ã€€ç¤ºä¾‹: Example:
 	 * http://api.twitter.com/statuses/user_timeline.xml?max_id=54321
 	 * 
-	 * ¡¡¡¡</br><strong>count</strong></br>: ¿ÉÑ¡²ÎÊı. Ã¿´Î·µ»ØµÄ×î´ó¼ÇÂ¼Êı£¬×î¶à·µ»Ø200Ìõ£¬Ä¬ÈÏ20¡£
+	 * ã€€ã€€</br><strong>count</strong></br>: å¯é€‰å‚æ•°. æ¯æ¬¡è¿”å›çš„æœ€å¤§è®°å½•æ•°ï¼Œæœ€å¤šè¿”å›200æ¡ï¼Œé»˜è®¤20ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/statuses/user_timeline.xml?count=200
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/statuses/user_timeline.xml?count=200
 	 * 
-	 * ¡¡¡¡</br><strong>page</strong></br>£º ¿ÉÑ¡²ÎÊı. ·ÖÒ³·µ»Ø¡£×¢Òâ£º×î¶à·µ»Ø200Ìõ·ÖÒ³ÄÚÈİ¡£
+	 * ã€€ã€€</br><strong>page</strong></br>ï¼š å¯é€‰å‚æ•°. åˆ†é¡µè¿”å›ã€‚æ³¨æ„ï¼šæœ€å¤šè¿”å›200æ¡åˆ†é¡µå†…å®¹ã€‚
 	 */
 	public final static String USER_TIMELINE_API = API_ROOT
 			+ "statuses/user_timeline." + API_FORMAT;
 
 	/**
-	 * ¸ÃAPIÔÚstatsnetÖĞÃ»ÓĞÊµÏÖ
+	 * è¯¥APIåœ¨statsnetä¸­æ²¡æœ‰å®ç°
 	 * 
 	 * @deprecated
 	 */
 	public final static String RETWEETED_TO_ME_API = API_ROOT
 			+ "statuses/retweeted_to_me." + API_FORMAT;
 	/**
-	 * ¸ÃAPIÔÚstatsnetÖĞÃ»ÓĞÊµÏÖ
+	 * è¯¥APIåœ¨statsnetä¸­æ²¡æœ‰å®ç°
 	 * 
 	 * @deprecated
 	 */
@@ -210,45 +210,45 @@ public class API {
 			+ "statuses/retweeted_of_me." + API_FORMAT;
 
 	// Status resources
-	// ÓÃ»§ÏûÏ¢Ïà¹Ø·½·¨
+	// ç”¨æˆ·æ¶ˆæ¯ç›¸å…³æ–¹æ³•
 	/**
-	 * ·µ»ØÖ¸¶¨IdµÄÒ»ÌõÏûÏ¢£¬·µ»ØĞÅÏ¢ÖĞ°üº¬×÷ÕßĞÅÏ¢¡£ Ö§³Ö¸ñÊ½ ( format ) £ºxml, json ²ÎÊıÁĞ±í:
+	 * è¿”å›æŒ‡å®šIdçš„ä¸€æ¡æ¶ˆæ¯ï¼Œè¿”å›ä¿¡æ¯ä¸­åŒ…å«ä½œè€…ä¿¡æ¯ã€‚ æ”¯æŒæ ¼å¼ ( format ) ï¼šxml, json å‚æ•°åˆ—è¡¨:
 	 * 
-	 * ¡¡¡¡</br><strong>id</strong></br>. ±ØĞë²ÎÊı(Î¢²©ĞÅÏ¢ID)£¬Òª»ñÈ¡ÒÑ·¢±íµÄÎ¢²©ID,ÈçID²»´æÔÚ·µ»Ø¿Õ
+	 * ã€€ã€€</br><strong>id</strong></br>. å¿…é¡»å‚æ•°(å¾®åšä¿¡æ¯ID)ï¼Œè¦è·å–å·²å‘è¡¨çš„å¾®åšID,å¦‚IDä¸å­˜åœ¨è¿”å›ç©º
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/statuses/show/142277.xml
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/statuses/show/142277.xml
 	 */
 	public final static String SHOW_API = API_ROOT + "statuses/show."
 			+ API_FORMAT;
 
 	/**
-	 * ¸üĞÂÈÏÖ¤ÓÃ»§µÄÏûÏ¢£¬±ØĞë°üº¬content²ÎÊı£¬ÇÒ±ØĞëÒÔPOST·½Ê½ÇëÇó¡£ ³É¹¦Ê±°´Ö¸¶¨¸ñÊ½·µ»Øµ±Ç°µÄÏûÏ¢¡£ Ö§³Ö¸ñÊ½ ( format
-	 * )£ºxml, json ²ÎÊıÁĞ±í:
+	 * æ›´æ–°è®¤è¯ç”¨æˆ·çš„æ¶ˆæ¯ï¼Œå¿…é¡»åŒ…å«contentå‚æ•°ï¼Œä¸”å¿…é¡»ä»¥POSTæ–¹å¼è¯·æ±‚ã€‚ æˆåŠŸæ—¶æŒ‰æŒ‡å®šæ ¼å¼è¿”å›å½“å‰çš„æ¶ˆæ¯ã€‚ æ”¯æŒæ ¼å¼ ( format
+	 * )ï¼šxml, json å‚æ•°åˆ—è¡¨:
 	 * 
-	 * ¡¡¡¡</br><strong>status</strong></br>. ±ØÌî²ÎÊı£¬
-	 * Òª¸üĞÂµÄÎ¢²©ĞÅÏ¢¡£±ØĞë×öURLEncode,ĞÅÏ¢ÄÚÈİ²¿³¬¹ı140¸öºº×Ö,Îª¿Õ·µ»Ø400´íÎó¡£
+	 * ã€€ã€€</br><strong>status</strong></br>. å¿…å¡«å‚æ•°ï¼Œ
+	 * è¦æ›´æ–°çš„å¾®åšä¿¡æ¯ã€‚å¿…é¡»åšURLEncode,ä¿¡æ¯å†…å®¹éƒ¨è¶…è¿‡140ä¸ªæ±‰å­—,ä¸ºç©ºè¿”å›400é”™è¯¯ã€‚
 	 * 
-	 * ¡¡¡¡</br><strong>in_reply_to_status_id</strong></br>. ¿ÉÑ¡²ÎÊı£¬@ ĞèÒª»Ø¸´µÄÎ¢²©ĞÅÏ¢ID,
-	 * Õâ¸ö²ÎÊıÖ»ÓĞÔÚÎ¢²©ÄÚÈİÒÔ @username ¿ªÍ·²ÅÓĞÒâÒå¡£
+	 * ã€€ã€€</br><strong>in_reply_to_status_id</strong></br>. å¯é€‰å‚æ•°ï¼Œ@ éœ€è¦å›å¤çš„å¾®åšä¿¡æ¯ID,
+	 * è¿™ä¸ªå‚æ•°åªæœ‰åœ¨å¾®åšå†…å®¹ä»¥ @username å¼€å¤´æ‰æœ‰æ„ä¹‰ã€‚
 	 * 
-	 * ¡¡¡¡</br><strong>lat</strong></br>. ¿ÉÑ¡²ÎÊı£¬Î³¶È£¬·¢±íµ±Ç°Î¢²©ËùÔÚµÄµØÀíÎ»ÖÃ£¬ÓĞĞ§·¶Î§ -90.0µ½+90.0,
-	 * +±íÊ¾±±Î³¡£Ö»ÓĞÓÃ»§ÉèÖÃÖĞgeo_enabled=trueÊ±ºòµØÀíÎ»ÖÃ²ÅÓĞĞ§¡£
+	 * ã€€ã€€</br><strong>lat</strong></br>. å¯é€‰å‚æ•°ï¼Œçº¬åº¦ï¼Œå‘è¡¨å½“å‰å¾®åšæ‰€åœ¨çš„åœ°ç†ä½ç½®ï¼Œæœ‰æ•ˆèŒƒå›´ -90.0åˆ°+90.0,
+	 * +è¡¨ç¤ºåŒ—çº¬ã€‚åªæœ‰ç”¨æˆ·è®¾ç½®ä¸­geo_enabled=trueæ—¶å€™åœ°ç†ä½ç½®æ‰æœ‰æ•ˆã€‚
 	 * 
-	 * ¡¡¡¡</br><strong>long</strong></br>. ¿ÉÑ¡²ÎÊı£¬¾­¶È¡£ÓĞĞ§·¶Î§-180.0µ½+180.0, +±íÊ¾¶«¾­¡£
+	 * ã€€ã€€</br><strong>long</strong></br>. å¯é€‰å‚æ•°ï¼Œç»åº¦ã€‚æœ‰æ•ˆèŒƒå›´-180.0åˆ°+180.0, +è¡¨ç¤ºä¸œç»ã€‚
 	 */
 	public final static String UPDATE_API = API_ROOT + "statuses/update."
 			+ API_FORMAT;
 
 	/**
-	 * ¸ù¾İÖ¸¶¨µÄidÉ¾³ıÒ»ÌõÏûÏ¢£¬ÈÏÖ¤ÓÃ»§±ØĞëÊÇÏûÏ¢µÄ×÷Õß¡£ Ö§³Ö¸ñÊ½ ( format ) £ºxml, json ²ÎÊıÁĞ±í:
+	 * æ ¹æ®æŒ‡å®šçš„idåˆ é™¤ä¸€æ¡æ¶ˆæ¯ï¼Œè®¤è¯ç”¨æˆ·å¿…é¡»æ˜¯æ¶ˆæ¯çš„ä½œè€…ã€‚ æ”¯æŒæ ¼å¼ ( format ) ï¼šxml, json å‚æ•°åˆ—è¡¨:
 	 * 
-	 * ¡¡¡¡</br><strong>id</strong></br> ±ØĞë£¬´ıÉ¾³ıµÄÏûÏ¢Id£¬ ÀıÈç£º
+	 * ã€€ã€€</br><strong>id</strong></br> å¿…é¡»ï¼Œå¾…åˆ é™¤çš„æ¶ˆæ¯Idï¼Œ ä¾‹å¦‚ï¼š
 	 * 
-	 * ¡¡¡¡http://api.twitter.com/statuses/destroy/12345.json
+	 * ã€€ã€€http://api.twitter.com/statuses/destroy/12345.json
 	 * 
-	 * ¡¡¡¡»òÕß
+	 * ã€€ã€€æˆ–è€…
 	 * 
-	 * ¡¡¡¡http://api.twitter.com/statuses/destroy.xml?id=23456
+	 * ã€€ã€€http://api.twitter.com/statuses/destroy.xml?id=23456
 	 */
 	public final static String DESTROY_API = API_ROOT + "statuses/destroy."
 			+ API_FORMAT;
@@ -256,370 +256,370 @@ public class API {
 			+ API_FORMAT;
 
 	// User resources
-	// ÓÃ»§²Ù×÷½Ó¿Ú
+	// ç”¨æˆ·æ“ä½œæ¥å£
 	/**
-	 * ·µ»ØÈÏÖ¤ÓÃ»§µÄÅóÓÑÁĞ±í£¬ÄÚº¬Ã¿¸öÓÃ»§µÄµ±Ç°Î¢²©ĞÅÏ¢¡£Õâ¸ö·½·¨Í¬Ñù¿ÉÒÔÓÃÀ´ÇëÇóÆäËûÓÃ»§µÄÅóÓÑÁĞ±í£¬Í¨¹ıÏÂÃæÖ¸Ã÷µÄ·½·¨´«µİid²ÎÊı¡£ Ö§³Ö¸ñÊ½ (
-	 * format )£ºxml, json ²ÎÊıÁĞ±í:
+	 * è¿”å›è®¤è¯ç”¨æˆ·çš„æœ‹å‹åˆ—è¡¨ï¼Œå†…å«æ¯ä¸ªç”¨æˆ·çš„å½“å‰å¾®åšä¿¡æ¯ã€‚è¿™ä¸ªæ–¹æ³•åŒæ ·å¯ä»¥ç”¨æ¥è¯·æ±‚å…¶ä»–ç”¨æˆ·çš„æœ‹å‹åˆ—è¡¨ï¼Œé€šè¿‡ä¸‹é¢æŒ‡æ˜çš„æ–¹æ³•ä¼ é€’idå‚æ•°ã€‚ æ”¯æŒæ ¼å¼ (
+	 * format )ï¼šxml, json å‚æ•°åˆ—è¡¨:
 	 * 
-	 * ¡¡¡¡</br><strong>id</strong></br>. Ñ¡Ìî²ÎÊı. Òª»ñÈ¡µÄ UID»òÎ¢²©êÇ³Æ
+	 * ã€€ã€€</br><strong>id</strong></br>. é€‰å¡«å‚æ•°. è¦è·å–çš„ UIDæˆ–å¾®åšæ˜µç§°
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/statuses/friends/12345.json
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/statuses/friends/12345.json
 	 * 
-	 * ¡¡¡¡http://api.twitter.com/statuses/friends/12345.xml
+	 * ã€€ã€€http://api.twitter.com/statuses/friends/12345.xml
 	 * 
-	 * ¡¡¡¡</br><strong>user_id</strong></br>. Ñ¡Ìî²ÎÊı. Òª»ñÈ¡µÄUID
+	 * ã€€ã€€</br><strong>user_id</strong></br>. é€‰å¡«å‚æ•°. è¦è·å–çš„UID
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/statuses/friends.xml?user_id=1401881
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/statuses/friends.xml?user_id=1401881
 	 * 
-	 * ¡¡¡¡</br><strong>screen_name</strong></br>. Ñ¡Ìî²ÎÊı. Òª»ñÈ¡µÄÎ¢²©êÇ³Æ
+	 * ã€€ã€€</br><strong>screen_name</strong></br>. é€‰å¡«å‚æ•°. è¦è·å–çš„å¾®åšæ˜µç§°
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/statuses/friends.xml?screen_name=101010
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/statuses/friends.xml?screen_name=101010
 	 * 
-	 * ¡¡¡¡</br><strong>cursor</strong></br>. Ñ¡Ìî²ÎÊı.
-	 * µ¥Ò³Ö»ÄÜ°üº¬100¸ö¹Ø×¢ÁĞ±í£¬ÎªÁË»ñÈ¡¸ü¶àÔòcursorÄ¬ÈÏ´Ó-1¿ªÊ¼£¬Í¨¹ıÔö¼Ó»ò¼õÉÙcursorÀ´»ñÈ¡¸ü¶à,
-	 * Èç¹ûÃ»ÓĞÏÂÒ»Ò³£¬Ôònext_cursor·µ»Ø0
+	 * ã€€ã€€</br><strong>cursor</strong></br>. é€‰å¡«å‚æ•°.
+	 * å•é¡µåªèƒ½åŒ…å«100ä¸ªå…³æ³¨åˆ—è¡¨ï¼Œä¸ºäº†è·å–æ›´å¤šåˆ™cursoré»˜è®¤ä»-1å¼€å§‹ï¼Œé€šè¿‡å¢åŠ æˆ–å‡å°‘cursoræ¥è·å–æ›´å¤š,
+	 * å¦‚æœæ²¡æœ‰ä¸‹ä¸€é¡µï¼Œåˆ™next_cursorè¿”å›0
 	 * 
-	 * ¡¡¡¡µÄ¹Ø×¢ÁĞ±í
+	 * ã€€ã€€çš„å…³æ³¨åˆ—è¡¨
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/statuses/friends/williamlong.xml?cursor=-1
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/statuses/friends/williamlong.xml?cursor=-1
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/statuses/friends/williamlong.xml?cursor=
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/statuses/friends/williamlong.xml?cursor=
 	 * 1300794057949944903
 	 * 
-	 * ¡¡¡¡</br><strong>count</strong></br>. ¿ÉÑ¡²ÎÊı.
-	 * Ã¿´Î·µ»ØµÄ×î´ó¼ÇÂ¼Êı£¨¼´Ò³Ãæ´óĞ¡£©£¬²»´óÓÚ200,Ä¬ÈÏ·µ»Ø20¡£
+	 * ã€€ã€€</br><strong>count</strong></br>. å¯é€‰å‚æ•°.
+	 * æ¯æ¬¡è¿”å›çš„æœ€å¤§è®°å½•æ•°ï¼ˆå³é¡µé¢å¤§å°ï¼‰ï¼Œä¸å¤§äº200,é»˜è®¤è¿”å›20ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/statuses/friends/bob.xml?&count=200
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/statuses/friends/bob.xml?&count=200
 	 */
 	public final static String FRIENDS_API = API_ROOT + "statuses/friends."
 			+ API_FORMAT;
 
 	/**
-	 * ·µ»ØÈÏÖ¤ÓÃ»§µÄ¶©ÔÄÕß£¬ÄÚº¬Ã¿¸ö¶©ÔÄÕßµÄµ±Ç°ÏûÏ¢¡£ÓëfriendsÒ»Ñù£¬Ö»ĞèÒª°ÑfriendsµØÖ·ÖĞµÄfriendsÌæ»»Îªfollowers¼´¿É£¬
-	 * ÆäÓàÒ»ÇĞ°üÀ¨²ÎÊı¶¼²»ĞèÒª¸Ä±ä£¬¶¼ÊÇÒ»ÑùµÄÓÃ·¨¡£ Ö§³Ö¸ñÊ½ ( format )£ºxml, json ²ÎÊıÁĞ±í:
+	 * è¿”å›è®¤è¯ç”¨æˆ·çš„è®¢é˜…è€…ï¼Œå†…å«æ¯ä¸ªè®¢é˜…è€…çš„å½“å‰æ¶ˆæ¯ã€‚ä¸friendsä¸€æ ·ï¼Œåªéœ€è¦æŠŠfriendsåœ°å€ä¸­çš„friendsæ›¿æ¢ä¸ºfollowerså³å¯ï¼Œ
+	 * å…¶ä½™ä¸€åˆ‡åŒ…æ‹¬å‚æ•°éƒ½ä¸éœ€è¦æ”¹å˜ï¼Œéƒ½æ˜¯ä¸€æ ·çš„ç”¨æ³•ã€‚ æ”¯æŒæ ¼å¼ ( format )ï¼šxml, json å‚æ•°åˆ—è¡¨:
 	 * 
-	 * ¡¡¡¡</br><strong>id</strong></br>. Ñ¡Ìî²ÎÊı. Òª»ñÈ¡·ÛË¿µÄ UID»òÎ¢²©êÇ³Æ
+	 * ã€€ã€€</br><strong>id</strong></br>. é€‰å¡«å‚æ•°. è¦è·å–ç²‰ä¸çš„ UIDæˆ–å¾®åšæ˜µç§°
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/statuses/followers/12345.json or
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/statuses/followers/12345.json or
 	 * http://api.twitter.com/statuses/followers/bob.xml
 	 * 
-	 * ¡¡¡¡</br><strong>user_id</strong></br>. Ñ¡Ìî²ÎÊı. Òª»ñÈ¡µÄUID
+	 * ã€€ã€€</br><strong>user_id</strong></br>. é€‰å¡«å‚æ•°. è¦è·å–çš„UID
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/statuses/followers.xml?user_id=1401881
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/statuses/followers.xml?user_id=1401881
 	 * 
-	 * ¡¡¡¡</br><strong>screen_name</strong></br>. Ñ¡Ìî²ÎÊı. Òª»ñÈ¡µÄÎ¢²©êÇ³Æ
+	 * ã€€ã€€</br><strong>screen_name</strong></br>. é€‰å¡«å‚æ•°. è¦è·å–çš„å¾®åšæ˜µç§°
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/statuses/followers.xml?screen_name=101010
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/statuses/followers.xml?screen_name=101010
 	 * 
-	 * ¡¡¡¡</br><strong>cursor</strong></br>. Ñ¡Ìî²ÎÊı.
-	 * µ¥Ò³Ö»ÄÜ°üº¬100¸ö·ÛË¿ÁĞ±í£¬ÎªÁË»ñÈ¡¸ü¶àÔòcursorÄ¬ÈÏ´Ó-1¿ªÊ¼£¬Í¨¹ıÔö¼Ó»ò¼õÉÙcursorÀ´»ñÈ¡¸ü¶àµÄ£¬Èç¹ûÃ»ÓĞÏÂÒ»Ò³
-	 * £¬Ôònext_cursor·µ»Ø0
+	 * ã€€ã€€</br><strong>cursor</strong></br>. é€‰å¡«å‚æ•°.
+	 * å•é¡µåªèƒ½åŒ…å«100ä¸ªç²‰ä¸åˆ—è¡¨ï¼Œä¸ºäº†è·å–æ›´å¤šåˆ™cursoré»˜è®¤ä»-1å¼€å§‹ï¼Œé€šè¿‡å¢åŠ æˆ–å‡å°‘cursoræ¥è·å–æ›´å¤šçš„ï¼Œå¦‚æœæ²¡æœ‰ä¸‹ä¸€é¡µ
+	 * ï¼Œåˆ™next_cursorè¿”å›0
 	 * 
-	 * ¡¡¡¡·ÛË¿ÁĞ±í Ê¾Àı:
-	 * http://api.twitter.com/statuses/followers/barackobama.xml?cursor=-1 Ê¾Àı:
+	 * ã€€ã€€ç²‰ä¸åˆ—è¡¨ ç¤ºä¾‹:
+	 * http://api.twitter.com/statuses/followers/barackobama.xml?cursor=-1 ç¤ºä¾‹:
 	 * http://api.twitter.com/statuses/followers/barackobama.xml?cursor=
 	 * 1300794057949944903
 	 * 
-	 * ¡¡¡¡</br><strong>count</strong></br>. ¿ÉÑ¡²ÎÊı.
-	 * Ã¿´Î·µ»ØµÄ×î´ó¼ÇÂ¼Êı£¨¼´Ò³Ãæ´óĞ¡£©£¬²»´óÓÚ200,Ä¬ÈÏ·µ»Ø20¡£
+	 * ã€€ã€€</br><strong>count</strong></br>. å¯é€‰å‚æ•°.
+	 * æ¯æ¬¡è¿”å›çš„æœ€å¤§è®°å½•æ•°ï¼ˆå³é¡µé¢å¤§å°ï¼‰ï¼Œä¸å¤§äº200,é»˜è®¤è¿”å›20ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/statuses/followers/bob.xml?&count=200
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/statuses/followers/bob.xml?&count=200
 	 */
 	public final static String FOLLOWERS_API = API_ROOT + "statuses/followers."
 			+ API_FORMAT;
 	/**
-	 * ÏÔÊ¾Ö¸¶¨ÓÃ»§µÄÀ©Õ¹ĞÅÏ¢£¬ĞèÒª¸ø¶¨ÓÃ»§µÄid»òÏÔÊ¾Ãû³Æ¡£À©Õ¹ĞÅÏ¢°üÀ¨ÓÃ»§µÄÒ³ÃæÉèÖÃ¡¢Î¢²©´ÎÊıµÈ£¬
-	 * Òò´ËµÚÈı·½Ó¦ÓÃµÄ¿ª·¢Õß¿ÉÒÔ¸ù¾İÕâĞ©ĞÅÏ¢ÎªÓÃ»§Ìá¹©ºÏÊÊµÄÖ÷Ìâ¡£
+	 * æ˜¾ç¤ºæŒ‡å®šç”¨æˆ·çš„æ‰©å±•ä¿¡æ¯ï¼Œéœ€è¦ç»™å®šç”¨æˆ·çš„idæˆ–æ˜¾ç¤ºåç§°ã€‚æ‰©å±•ä¿¡æ¯åŒ…æ‹¬ç”¨æˆ·çš„é¡µé¢è®¾ç½®ã€å¾®åšæ¬¡æ•°ç­‰ï¼Œ
+	 * å› æ­¤ç¬¬ä¸‰æ–¹åº”ç”¨çš„å¼€å‘è€…å¯ä»¥æ ¹æ®è¿™äº›ä¿¡æ¯ä¸ºç”¨æˆ·æä¾›åˆé€‚çš„ä¸»é¢˜ã€‚
 	 * 
-	 * ¡¡¡¡×¢Òâ£º±¾APIµ÷ÓÃÇëÇó±ØĞë·¢×ÔºÏ·¨Î¢²©ÓÃ»§£¬²»ÂÛÇëÇó×Ô¼º/ËûÈËµÄÀ©Õ¹ĞÅÏ¢¡£ Ö§³Ö¸ñÊ½ ( format )£ºxml, json ²ÎÊıÁĞ±í£º
+	 * ã€€ã€€æ³¨æ„ï¼šæœ¬APIè°ƒç”¨è¯·æ±‚å¿…é¡»å‘è‡ªåˆæ³•å¾®åšç”¨æˆ·ï¼Œä¸è®ºè¯·æ±‚è‡ªå·±/ä»–äººçš„æ‰©å±•ä¿¡æ¯ã€‚ æ”¯æŒæ ¼å¼ ( format )ï¼šxml, json å‚æ•°åˆ—è¡¨ï¼š
 	 * 
-	 * ¡¡¡¡</br><strong>id</strong></br>. ÓÃ»§UID»òÎ¢²©êÇ³Æ¡£
+	 * ã€€ã€€</br><strong>id</strong></br>. ç”¨æˆ·UIDæˆ–å¾®åšæ˜µç§°ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/users/show/12345.json »ò
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/users/show/12345.json æˆ–
 	 * http://api.twitter.com/users/show/bob.xml
 	 * 
-	 * ¡¡¡¡</br><strong>user_id</strong></br>.
-	 * Ö¸¶¨ÓÃ»§UID,Ö÷ÒªÊÇÓÃÀ´Çø·ÖÓÃ»§UID¸úÎ¢²©êÇ³ÆÒ»Ñù£¬²úÉúÆçÒåµÄÊ±ºò£¬ÌØ±ğÊÇÔÚÓÃ»§ÕËºÅÎªÊı×Öµ¼ÖÂºÍÓÃ»§Uid·¢ÉúÆçÒå¡£
+	 * ã€€ã€€</br><strong>user_id</strong></br>.
+	 * æŒ‡å®šç”¨æˆ·UID,ä¸»è¦æ˜¯ç”¨æ¥åŒºåˆ†ç”¨æˆ·UIDè·Ÿå¾®åšæ˜µç§°ä¸€æ ·ï¼Œäº§ç”Ÿæ­§ä¹‰çš„æ—¶å€™ï¼Œç‰¹åˆ«æ˜¯åœ¨ç”¨æˆ·è´¦å·ä¸ºæ•°å­—å¯¼è‡´å’Œç”¨æˆ·Uidå‘ç”Ÿæ­§ä¹‰ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/users/show.xml?user_id=1401881
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/users/show.xml?user_id=1401881
 	 * 
-	 * ¡¡¡¡</br><strong>screen_name</strong></br>.
-	 * Ö¸¶¨Î¢²©êÇ³Æ£¬Ö÷ÒªÊÇÓÃÀ´Çø·ÖÓÃ»§UID¸úÎ¢²©êÇ³ÆÒ»Ñù£¬²úÉúÆçÒåµÄÊ±ºò¡£
+	 * ã€€ã€€</br><strong>screen_name</strong></br>.
+	 * æŒ‡å®šå¾®åšæ˜µç§°ï¼Œä¸»è¦æ˜¯ç”¨æ¥åŒºåˆ†ç”¨æˆ·UIDè·Ÿå¾®åšæ˜µç§°ä¸€æ ·ï¼Œäº§ç”Ÿæ­§ä¹‰çš„æ—¶å€™ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/users/show.xml?screen_name=101010
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/users/show.xml?screen_name=101010
 	 */
 	public final static String USERS_SHOW_API = API_ROOT + "users/show."
 			+ API_FORMAT;
 
 	// Direct message resources
-	// Ë½ĞÅ²Ù×÷·½·¨
+	// ç§ä¿¡æ“ä½œæ–¹æ³•
 	/**
-	 * ·µ»ØÓÃ»§µÄÏûÏ¢ÁĞ±í Ö§³Ö¸ñÊ½ ( format ) £ºxml, json, rss, atom ²ÎÊıÁĞ±í:
+	 * è¿”å›ç”¨æˆ·çš„æ¶ˆæ¯åˆ—è¡¨ æ”¯æŒæ ¼å¼ ( format ) ï¼šxml, json, rss, atom å‚æ•°åˆ—è¡¨:
 	 * 
-	 * ¡¡¡¡</br><strong>since_id</strong></br>. ¿ÉÑ¡²ÎÊı.
-	 * ·µ»ØID±ÈÊıÖµsince_id´ó£¨±Èsince_idÊ±¼äÍíµÄ£©µÄË½ĞÅ¡£
+	 * ã€€ã€€</br><strong>since_id</strong></br>. å¯é€‰å‚æ•°.
+	 * è¿”å›IDæ¯”æ•°å€¼since_idå¤§ï¼ˆæ¯”since_idæ—¶é—´æ™šçš„ï¼‰çš„ç§ä¿¡ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/direct_messages.xml?since_id=12345
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/direct_messages.xml?since_id=12345
 	 * 
-	 * ¡¡¡¡</br><strong>max_id</strong></br>. ¿ÉÑ¡²ÎÊı. ·µ»ØID²»´óÓÚmax_id(Ê±¼ä²»ÍíÓÚmax_id)µÄË½ĞÅ¡£
+	 * ã€€ã€€</br><strong>max_id</strong></br>. å¯é€‰å‚æ•°. è¿”å›IDä¸å¤§äºmax_id(æ—¶é—´ä¸æ™šäºmax_id)çš„ç§ä¿¡ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/direct_messages.xml?max_id=54321
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/direct_messages.xml?max_id=54321
 	 * 
-	 * ¡¡¡¡</br><strong>count</strong></br>. ¿ÉÑ¡²ÎÊı. Ã¿´Î·µ»ØµÄ×î´ó¼ÇÂ¼Êı£¨¼´Ò³Ãæ´óĞ¡£©£¬²»´óÓÚ200¡£
+	 * ã€€ã€€</br><strong>count</strong></br>. å¯é€‰å‚æ•°. æ¯æ¬¡è¿”å›çš„æœ€å¤§è®°å½•æ•°ï¼ˆå³é¡µé¢å¤§å°ï¼‰ï¼Œä¸å¤§äº200ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/direct_messages.xml?count=200
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/direct_messages.xml?count=200
 	 * 
-	 * ¡¡¡¡</br><strong>page</strong></br>. ¿ÉÑ¡²ÎÊı. ·µ»Ø½á¹ûµÄÒ³ĞòºÅ¡£×¢Òâ£ºÓĞ·ÖÒ³ÏŞÖÆ¡£
+	 * ã€€ã€€</br><strong>page</strong></br>. å¯é€‰å‚æ•°. è¿”å›ç»“æœçš„é¡µåºå·ã€‚æ³¨æ„ï¼šæœ‰åˆ†é¡µé™åˆ¶ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/direct_messages.xml?page=3
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/direct_messages.xml?page=3
 	 */
 	public final static String DIRECT_MESSAGES_API = API_ROOT
 			+ "direct_messages." + API_FORMAT;
 
 	/**
-	 * ·µ»ØÓÃ»§µÄÒÑ·¢ËÍÏûÏ¢ÁĞ±í Ö§³Ö¸ñÊ½ ( format ) £ºxml, json, rss, atom ²ÎÊıÁĞ±í:
+	 * è¿”å›ç”¨æˆ·çš„å·²å‘é€æ¶ˆæ¯åˆ—è¡¨ æ”¯æŒæ ¼å¼ ( format ) ï¼šxml, json, rss, atom å‚æ•°åˆ—è¡¨:
 	 * 
-	 * ¡¡¡¡</br><strong>since_id</strong></br>. ¿ÉÑ¡²ÎÊı.
-	 * ·µ»ØID±ÈÊıÖµsince_id´ó£¨±Èsince_idÊ±¼äÍíµÄ£©µÄË½ĞÅ¡£
+	 * ã€€ã€€</br><strong>since_id</strong></br>. å¯é€‰å‚æ•°.
+	 * è¿”å›IDæ¯”æ•°å€¼since_idå¤§ï¼ˆæ¯”since_idæ—¶é—´æ™šçš„ï¼‰çš„ç§ä¿¡ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/direct_messages.xml?since_id=12345
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/direct_messages.xml?since_id=12345
 	 * 
-	 * ¡¡¡¡</br><strong>max_id</strong></br>. ¿ÉÑ¡²ÎÊı. ·µ»ØID²»´óÓÚmax_id(Ê±¼ä²»ÍíÓÚmax_id)µÄË½ĞÅ¡£
+	 * ã€€ã€€</br><strong>max_id</strong></br>. å¯é€‰å‚æ•°. è¿”å›IDä¸å¤§äºmax_id(æ—¶é—´ä¸æ™šäºmax_id)çš„ç§ä¿¡ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/direct_messages.xml?max_id=54321
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/direct_messages.xml?max_id=54321
 	 * 
-	 * ¡¡¡¡</br><strong>count</strong></br>. ¿ÉÑ¡²ÎÊı. Ã¿´Î·µ»ØµÄ×î´ó¼ÇÂ¼Êı£¨¼´Ò³Ãæ´óĞ¡£©£¬²»´óÓÚ200¡£
+	 * ã€€ã€€</br><strong>count</strong></br>. å¯é€‰å‚æ•°. æ¯æ¬¡è¿”å›çš„æœ€å¤§è®°å½•æ•°ï¼ˆå³é¡µé¢å¤§å°ï¼‰ï¼Œä¸å¤§äº200ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/direct_messages.xml?count=200
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/direct_messages.xml?count=200
 	 * 
-	 * ¡¡¡¡</br><strong>page</strong></br>. ¿ÉÑ¡²ÎÊı. ·µ»Ø½á¹ûµÄÒ³ĞòºÅ¡£×¢Òâ£ºÓĞ·ÖÒ³ÏŞÖÆ¡£
+	 * ã€€ã€€</br><strong>page</strong></br>. å¯é€‰å‚æ•°. è¿”å›ç»“æœçš„é¡µåºå·ã€‚æ³¨æ„ï¼šæœ‰åˆ†é¡µé™åˆ¶ã€‚
 	 */
 	public final static String DIRECT_MESSAGES_SENT_API = API_ROOT
 			+ "direct_messages/sent." + API_FORMAT;
 
 	/**
-	 * ÒÔÈÏÖ¤ÓÃ»§µÄÉí·İÏòÖ¸¶¨µÄÆäËûÓÃ»§·¢ËÍÒ»ÌõÓĞÏòÏûÏ¢£¬±ØĞë°üº¬²ÎÊıuserºÍtext,ÇëÇó±ØĞëÊ¹ÓÃPOST·½Ê½Ìá½»¡£
-	 * ³É¹¦½«·µ»ØÍêÕûµÄ·¢ËÍÏûÏ¢±ØĞë°üº¬²ÎÊıuserºÍtext£¬±ØĞëÊ¹ÓÃPOST·½Ê½Ìá½»¡£³É¹¦½«·µ»ØÍêÕûµÄ·¢ËÍÏûÏ¢¡£
+	 * ä»¥è®¤è¯ç”¨æˆ·çš„èº«ä»½å‘æŒ‡å®šçš„å…¶ä»–ç”¨æˆ·å‘é€ä¸€æ¡æœ‰å‘æ¶ˆæ¯ï¼Œå¿…é¡»åŒ…å«å‚æ•°userå’Œtext,è¯·æ±‚å¿…é¡»ä½¿ç”¨POSTæ–¹å¼æäº¤ã€‚
+	 * æˆåŠŸå°†è¿”å›å®Œæ•´çš„å‘é€æ¶ˆæ¯å¿…é¡»åŒ…å«å‚æ•°userå’Œtextï¼Œå¿…é¡»ä½¿ç”¨POSTæ–¹å¼æäº¤ã€‚æˆåŠŸå°†è¿”å›å®Œæ•´çš„å‘é€æ¶ˆæ¯ã€‚
 	 * 
-	 * Ö§³Ö¸ñÊ½ ( format ) £ºxml, json ²ÎÊıÁĞ±í£º
+	 * æ”¯æŒæ ¼å¼ ( format ) ï¼šxml, json å‚æ•°åˆ—è¡¨ï¼š
 	 * 
-	 * ¡¡¡¡</br><strong>user: user_id»òÕßscreen_name</strong></br>
+	 * ã€€ã€€</br><strong>user: user_idæˆ–è€…screen_name</strong></br>
 	 * 
-	 * ¡¡¡¡</br><strong>text</strong></br>: ±ØĞë²ÎÊı.
-	 * Òª·¢ÉúµÄÏûÏ¢ÄÚÈİ£¬ĞèÒª×öURLEncode£¬ÎÄ±¾´óĞ¡±ØĞëĞ¡ÓÚ300¸öºº×Ö
+	 * ã€€ã€€</br><strong>text</strong></br>: å¿…é¡»å‚æ•°.
+	 * è¦å‘ç”Ÿçš„æ¶ˆæ¯å†…å®¹ï¼Œéœ€è¦åšURLEncodeï¼Œæ–‡æœ¬å¤§å°å¿…é¡»å°äº300ä¸ªæ±‰å­—
 	 */
 	public final static String DIRECT_MESSAGES_NEW_API = API_ROOT
 			+ "direct_messages/new." + API_FORMAT;
 
 	/**
-	 * @deprecated ¸ÃAPIÔÚstatusnetÖĞÃ»ÓĞÊµÏÖ£¡
+	 * @deprecated è¯¥APIåœ¨statusnetä¸­æ²¡æœ‰å®ç°ï¼
 	 * 
-	 *             Í¨¹ı¸ø¶¨µÄÏûÏ¢id£¬É¾³ıÖ¸¶¨µÄÓĞÏòÏûÏ¢£¬ÈÏÖ¤ÓÃ»§Ö»ÄÜÉ¾³ıÆä×÷Îª½ÓÊÜÕßÊÕµ½µÄÏûÏ¢¡£Ê¹ÓÃPOSTºÍGET·½·¨¶¼¿ÉÒÔ Ö§³Ö¸ñÊ½
-	 *             ( format ) £ºxml, json ²ÎÊıÁĞ±í£º
+	 *             é€šè¿‡ç»™å®šçš„æ¶ˆæ¯idï¼Œåˆ é™¤æŒ‡å®šçš„æœ‰å‘æ¶ˆæ¯ï¼Œè®¤è¯ç”¨æˆ·åªèƒ½åˆ é™¤å…¶ä½œä¸ºæ¥å—è€…æ”¶åˆ°çš„æ¶ˆæ¯ã€‚ä½¿ç”¨POSTå’ŒGETæ–¹æ³•éƒ½å¯ä»¥ æ”¯æŒæ ¼å¼
+	 *             ( format ) ï¼šxml, json å‚æ•°åˆ—è¡¨ï¼š
 	 * 
-	 *             ¡¡¡¡</br><strong>id</strong></br>. ±ØÌî²ÎÊı£¬ÒªÉ¾³ıµÄË½ĞÅÖ÷¼üID.
+	 *             ã€€ã€€</br><strong>id</strong></br>. å¿…å¡«å‚æ•°ï¼Œè¦åˆ é™¤çš„ç§ä¿¡ä¸»é”®ID.
 	 * 
-	 *             ¡¡¡¡Ê¾Àı:
+	 *             ã€€ã€€ç¤ºä¾‹:
 	 *             http://api.twitter.com/direct_messages/destroy/12345.json
 	 */
 	public final static String DIRECT_MESSAGES_DESTROY_API = API_ROOT
 			+ "direct_messages/destroy." + API_FORMAT;
 
 	// Friendships resources
-	// ºÃÓÑ¹ØÏµ²Ù×÷·½·¨
+	// å¥½å‹å…³ç³»æ“ä½œæ–¹æ³•
 	/**
-	 * ´´½¨ÈÏÖ¤ÓÃ»§Óë¸ø¶¨µÄid²ÎÊıÖ¸¶¨µÄÓÃ»§Ö®¼äµÄºÃÓÑ¹ØÏµ£»¸Ã²Ù×÷Ö´ĞĞ³É¹¦Ê±·µ»Ø±»¼ÓÎªºÃÓÑµÄÓÃ»§ĞÅÏ¢£¬Ö´ĞĞÊ§°ÜÔò·µ»ØÊ§°ÜµÄ×´Ì¬×Ö´®¡£
+	 * åˆ›å»ºè®¤è¯ç”¨æˆ·ä¸ç»™å®šçš„idå‚æ•°æŒ‡å®šçš„ç”¨æˆ·ä¹‹é—´çš„å¥½å‹å…³ç³»ï¼›è¯¥æ“ä½œæ‰§è¡ŒæˆåŠŸæ—¶è¿”å›è¢«åŠ ä¸ºå¥½å‹çš„ç”¨æˆ·ä¿¡æ¯ï¼Œæ‰§è¡Œå¤±è´¥åˆ™è¿”å›å¤±è´¥çš„çŠ¶æ€å­—ä¸²ã€‚
 	 * 
-	 * Ö§³Ö¸ñÊ½ ( format ) £ºxml, json
+	 * æ”¯æŒæ ¼å¼ ( format ) ï¼šxml, json
 	 * 
-	 * ¡¡¡¡²ÎÊıÁĞ±í£º
+	 * ã€€ã€€å‚æ•°åˆ—è¡¨ï¼š
 	 * 
-	 * ¡¡¡¡ÏÂÃæµÄ²ÎÊı±ØĞëÓĞÆäÖĞÒ»¸ö:
+	 * ã€€ã€€ä¸‹é¢çš„å‚æ•°å¿…é¡»æœ‰å…¶ä¸­ä¸€ä¸ª:
 	 * 
-	 * ¡¡¡¡</br><strong>id</strong></br>. ±ØÌî²ÎÊı. Òª¹Ø×¢µÄÓÃ»§UID»òÎ¢²©êÇ³Æ
+	 * ã€€ã€€</br><strong>id</strong></br>. å¿…å¡«å‚æ•°. è¦å…³æ³¨çš„ç”¨æˆ·UIDæˆ–å¾®åšæ˜µç§°
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/friendships/create/12345.json or
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/friendships/create/12345.json or
 	 * http://api.twitter.com/friendships/create/bob.xml
 	 * 
-	 * ¡¡¡¡</br><strong>user_id</strong></br>. ±ØÌî²ÎÊı.
-	 * Òª¹Ø×¢µÄÓÃ»§UID,Ö÷ÒªÊÇÓÃÔÚÇø·ÖÓÃ»§UID¸úÎ¢²©êÇ³ÆÒ»Ñù£¬²úÉúÆçÒåµÄÊ±ºò¡£
+	 * ã€€ã€€</br><strong>user_id</strong></br>. å¿…å¡«å‚æ•°.
+	 * è¦å…³æ³¨çš„ç”¨æˆ·UID,ä¸»è¦æ˜¯ç”¨åœ¨åŒºåˆ†ç”¨æˆ·UIDè·Ÿå¾®åšæ˜µç§°ä¸€æ ·ï¼Œäº§ç”Ÿæ­§ä¹‰çš„æ—¶å€™ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/friendships/create.xml?user_id=1401881
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/friendships/create.xml?user_id=1401881
 	 * 
-	 * ¡¡¡¡</br><strong>screen_name</strong></br>.±ØÌî²ÎÊı.
-	 * Òª¹Ø×¢µÄÎ¢²©êÇ³Æ,Ö÷ÒªÊÇÓÃÔÚÇø·ÖÓÃ»§UID¸úÎ¢²©êÇ³ÆÒ»Ñù£¬²úÉúÆçÒåµÄÊ±ºò¡£
+	 * ã€€ã€€</br><strong>screen_name</strong></br>.å¿…å¡«å‚æ•°.
+	 * è¦å…³æ³¨çš„å¾®åšæ˜µç§°,ä¸»è¦æ˜¯ç”¨åœ¨åŒºåˆ†ç”¨æˆ·UIDè·Ÿå¾®åšæ˜µç§°ä¸€æ ·ï¼Œäº§ç”Ÿæ­§ä¹‰çš„æ—¶å€™ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/friendships/create.xml?screen_name=101010
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/friendships/create.xml?screen_name=101010
 	 * 
-	 * ¡¡¡¡</br><strong>follow</strong></br>. ¿ÉÑ¡²ÎÊı¡£Ôİ²»Ö§³Ö¡£
+	 * ã€€ã€€</br><strong>follow</strong></br>. å¯é€‰å‚æ•°ã€‚æš‚ä¸æ”¯æŒã€‚
 	 */
 	public final static String FRIENDSHIPS_CREATE_API = API_ROOT
 			+ "friendships/create." + API_FORMAT;
 
 	/**
-	 * ÓÃÀ´×¢ÏúÍ¬Ö¸¶¨idµÄÓÃ»§µÄºÃÓÑ¹ØÏµ£¬µ±²Ù×÷³É¹¦Ê±£¬½«·µ»Ø±»È¡ÏûºÃÓÑ¹ØÏµµÄÓÃ»§£¬µ±Ê§°ÜÊ±£¬½«»á·µ»ØÊ§°ÜĞÅÏ¢¡£
+	 * ç”¨æ¥æ³¨é”€åŒæŒ‡å®šidçš„ç”¨æˆ·çš„å¥½å‹å…³ç³»ï¼Œå½“æ“ä½œæˆåŠŸæ—¶ï¼Œå°†è¿”å›è¢«å–æ¶ˆå¥½å‹å…³ç³»çš„ç”¨æˆ·ï¼Œå½“å¤±è´¥æ—¶ï¼Œå°†ä¼šè¿”å›å¤±è´¥ä¿¡æ¯ã€‚
 	 * 
-	 * ¡¡¡¡·ÃÎÊµØÖ·£ºhttp://api.twitter.com/friendships/destroy/id.format
+	 * ã€€ã€€è®¿é—®åœ°å€ï¼šhttp://api.twitter.com/friendships/destroy/id.format
 	 * 
-	 * ¡¡¡¡Ö§³Ö¸ñÊ½ ( format ) £ºxml, json
+	 * ã€€ã€€æ”¯æŒæ ¼å¼ ( format ) ï¼šxml, json
 	 * 
-	 * ¡¡¡¡²ÎÊıÁĞ±í£º
+	 * ã€€ã€€å‚æ•°åˆ—è¡¨ï¼š
 	 * 
-	 * ¡¡¡¡ÏÂÃæµÄ²ÎÊı±ØĞëÓĞÆäÖĞÒ»¸ö:
+	 * ã€€ã€€ä¸‹é¢çš„å‚æ•°å¿…é¡»æœ‰å…¶ä¸­ä¸€ä¸ª:
 	 * 
-	 * ¡¡¡¡</br><strong>id</strong></br>. ±ØÌî²ÎÊı. ÒªÈ¡Ïû¹Ø×¢µÄÓÃ»§UID»òÎ¢²©êÇ³Æ
+	 * ã€€ã€€</br><strong>id</strong></br>. å¿…å¡«å‚æ•°. è¦å–æ¶ˆå…³æ³¨çš„ç”¨æˆ·UIDæˆ–å¾®åšæ˜µç§°
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/friendships/destroy/12345.json or
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/friendships/destroy/12345.json or
 	 * http://api.twitter.com/friendships/destroy/bob.xml
 	 * 
-	 * ¡¡¡¡</br><strong>user_id</strong></br>. ±ØÌî²ÎÊı.
-	 * ÒªÈ¡Ïû¹Ø×¢µÄÓÃ»§UID,Ö÷ÒªÊÇÓÃÔÚÇø·ÖÓÃ»§UID¸úÎ¢²©êÇ³ÆÒ»Ñù£¬²úÉúÆçÒåµÄÊ±ºò¡£
+	 * ã€€ã€€</br><strong>user_id</strong></br>. å¿…å¡«å‚æ•°.
+	 * è¦å–æ¶ˆå…³æ³¨çš„ç”¨æˆ·UID,ä¸»è¦æ˜¯ç”¨åœ¨åŒºåˆ†ç”¨æˆ·UIDè·Ÿå¾®åšæ˜µç§°ä¸€æ ·ï¼Œäº§ç”Ÿæ­§ä¹‰çš„æ—¶å€™ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/friendships/destroy.xml?user_id=1401881
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/friendships/destroy.xml?user_id=1401881
 	 * 
-	 * ¡¡¡¡</br><strong>screen_name</strong></br>. ±ØÌî²ÎÊı.
-	 * ÒªÈ¡ÏûµÄÎ¢²©êÇ³Æ,Ö÷ÒªÊÇÓÃÔÚÇø·ÖÓÃ»§UID¸úÎ¢²©êÇ³ÆÒ»Ñù£¬²úÉúÆçÒåµÄÊ±ºò¡£
+	 * ã€€ã€€</br><strong>screen_name</strong></br>. å¿…å¡«å‚æ•°.
+	 * è¦å–æ¶ˆçš„å¾®åšæ˜µç§°,ä¸»è¦æ˜¯ç”¨åœ¨åŒºåˆ†ç”¨æˆ·UIDè·Ÿå¾®åšæ˜µç§°ä¸€æ ·ï¼Œäº§ç”Ÿæ­§ä¹‰çš„æ—¶å€™ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/friendships/destroy.xml?screen_name=101010
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/friendships/destroy.xml?screen_name=101010
 	 */
 	public final static String FRIENDSHIPS_DESTROY_API = API_ROOT
 			+ "friendships/destroy." + API_FORMAT;
 
 	/**
-	 * ÓÃÀ´¼ìÑéÁ½¸öÓÃ»§µÄ¹ØÏµÊÇ·ñÊÇÅóÓÑ¹ØÏµ»òÕß¸úËæÓë±»¸úËæµÄ¹ØÏµ¡£·µ»ØÏà»¥¸úËæµÄ¹ØÏµ½á¹û¡£±ÈÈç£ºA¸úËæÁËB¡£BÃ»ÓĞ¸úËæA¡£½«·µ»Ø¶ÔÓ¦µÄ¸ñÊ½Êı¾İ£ºÈçxml
-	 * £¬<result><AFollowB>true</AFollowB><BFollowA>false</BFollowA></result>
+	 * ç”¨æ¥æ£€éªŒä¸¤ä¸ªç”¨æˆ·çš„å…³ç³»æ˜¯å¦æ˜¯æœ‹å‹å…³ç³»æˆ–è€…è·Ÿéšä¸è¢«è·Ÿéšçš„å…³ç³»ã€‚è¿”å›ç›¸äº’è·Ÿéšçš„å…³ç³»ç»“æœã€‚æ¯”å¦‚ï¼šAè·Ÿéšäº†Bã€‚Bæ²¡æœ‰è·ŸéšAã€‚å°†è¿”å›å¯¹åº”çš„æ ¼å¼æ•°æ®ï¼šå¦‚xml
+	 * ï¼Œ<result><AFollowB>true</AFollowB><BFollowA>false</BFollowA></result>
 	 * 
-	 * ¡¡¡¡·ÃÎÊµØÖ·£º http://api.twitter.com/friendships/exists.format
+	 * ã€€ã€€è®¿é—®åœ°å€ï¼š http://api.twitter.com/friendships/exists.format
 	 * 
-	 * ¡¡¡¡Ö§³Ö¸ñÊ½£ºxml, json
+	 * ã€€ã€€æ”¯æŒæ ¼å¼ï¼šxml, json
 	 * 
-	 * ¡¡¡¡²ÎÊıÁĞ±í£º
+	 * ã€€ã€€å‚æ•°åˆ—è¡¨ï¼š
 	 * 
-	 * ¡¡¡¡</br><strong>user_a</strong></br>. ±ØÌî²ÎÊı£¬ÒªÅĞ¶ÏµÄÓÃ»§UID
+	 * ã€€ã€€</br><strong>user_a</strong></br>. å¿…å¡«å‚æ•°ï¼Œè¦åˆ¤æ–­çš„ç”¨æˆ·UID
 	 * 
-	 * ¡¡¡¡</br><strong>user_b</strong></br>. ±ØÌî²ÎÊı£¬ÒªÅĞ¶ÏµÄ±»¹Ø×¢ÈËÓÃ»§UID
+	 * ã€€ã€€</br><strong>user_b</strong></br>. å¿…å¡«å‚æ•°ï¼Œè¦åˆ¤æ–­çš„è¢«å…³æ³¨äººç”¨æˆ·UID
 	 */
 	public final static String FRIENDSHIPS_EXISTS_API = API_ROOT
 			+ "friendships/create." + API_FORMAT;
 
 	/**
-	 * ·µ»ØÁ½¸öÓÃ»§¹ØÏµµÄÏêÏ¸Çé¿ö
+	 * è¿”å›ä¸¤ä¸ªç”¨æˆ·å…³ç³»çš„è¯¦ç»†æƒ…å†µ
 	 * 
-	 * ¡¡¡¡·ÃÎÊµØÖ·£º http://api.twitter.com/friendships/show.format
+	 * ã€€ã€€è®¿é—®åœ°å€ï¼š http://api.twitter.com/friendships/show.format
 	 * 
-	 * ¡¡¡¡Ö§³Ö¸ñÊ½£ºxml, json
+	 * ã€€ã€€æ”¯æŒæ ¼å¼ï¼šxml, json
 	 * 
-	 * ¡¡¡¡²ÎÊıÁĞ±í£º
+	 * ã€€ã€€å‚æ•°åˆ—è¡¨ï¼š
 	 * 
-	 * ¡¡¡¡ÒÔÏÂ²ÎÊı¿É²»ÌîĞ´£¬Èç²»Ìî£¬ÔòÈ¡µ±Ç°ÓÃ»§
+	 * ã€€ã€€ä»¥ä¸‹å‚æ•°å¯ä¸å¡«å†™ï¼Œå¦‚ä¸å¡«ï¼Œåˆ™å–å½“å‰ç”¨æˆ·
 	 * 
-	 * ¡¡¡¡</br><strong>source_id</strong></br>. Ô´ÓÃ»§UID
+	 * ã€€ã€€</br><strong>source_id</strong></br>. æºç”¨æˆ·UID
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/friendships/show.xml?source_id=10502
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/friendships/show.xml?source_id=10502
 	 * 
-	 * ¡¡¡¡</br><strong>source_screen_name</strong></br>. Ô´Î¢²©êÇ³Æ
+	 * ã€€ã€€</br><strong>source_screen_name</strong></br>. æºå¾®åšæ˜µç§°
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/friendships/show.xml?source_screen_name=bob
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/friendships/show.xml?source_screen_name=bob
 	 * 
-	 * ¡¡¡¡ÏÂÃæ²ÎÊı±ØĞëÑ¡ÌîÒ»¸ö:
+	 * ã€€ã€€ä¸‹é¢å‚æ•°å¿…é¡»é€‰å¡«ä¸€ä¸ª:
 	 * 
-	 * ¡¡¡¡</br><strong>target_id</strong></br>. ÒªÅĞ¶ÏµÄÄ¿µÄÓÃ»§UID
+	 * ã€€ã€€</br><strong>target_id</strong></br>. è¦åˆ¤æ–­çš„ç›®çš„ç”¨æˆ·UID
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/friendships/show.xml?target_id=10503
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/friendships/show.xml?target_id=10503
 	 * 
-	 * ¡¡¡¡</br><strong>target_screen_name</strong></br>. ÒªÅĞ¶ÏµÄÄ¿µÄÎ¢²©êÇ³Æ
+	 * ã€€ã€€</br><strong>target_screen_name</strong></br>. è¦åˆ¤æ–­çš„ç›®çš„å¾®åšæ˜µç§°
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/friendships/show.xml?target_screen_name=
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/friendships/show.xml?target_screen_name=
 	 * williamlong
 	 */
 	public final static String FRIENDSHIPS_SHOW_API = API_ROOT
 			+ "friendships/show." + API_FORMAT;
 
 	// Friends and followers resources
-	// »ñÈ¡ÓÃ»§ÁĞ±í·½·¨
+	// è·å–ç”¨æˆ·åˆ—è¡¨æ–¹æ³•
 	/**
-	 * ÓÃÀ´»ñÈ¡Ö¸¶¨µÄÓÃ»§µÄÅóÓÑÓÃ»§id¡£¼´×Ô¼º¸úËæµÄÈËµÄid
+	 * ç”¨æ¥è·å–æŒ‡å®šçš„ç”¨æˆ·çš„æœ‹å‹ç”¨æˆ·idã€‚å³è‡ªå·±è·Ÿéšçš„äººçš„id
 	 * 
-	 * ¡¡¡¡·ÃÎÊµØÖ·£ºhttp://api.twitter.com/friends/ids.format
+	 * ã€€ã€€è®¿é—®åœ°å€ï¼šhttp://api.twitter.com/friends/ids.format
 	 * 
-	 * ¡¡¡¡Ö§³Ö¸ñÊ½£ºxml, json
+	 * ã€€ã€€æ”¯æŒæ ¼å¼ï¼šxml, json
 	 * 
-	 * ¡¡¡¡²ÎÊıÁĞ±í£º
+	 * ã€€ã€€å‚æ•°åˆ—è¡¨ï¼š
 	 * 
-	 * ¡¡¡¡</br><strong>id</strong></br>. Ñ¡Ìî²ÎÊı. Òª»ñÈ¡ºÃÓÑµÄUID»òÎ¢²©êÇ³Æ
+	 * ã€€ã€€</br><strong>id</strong></br>. é€‰å¡«å‚æ•°. è¦è·å–å¥½å‹çš„UIDæˆ–å¾®åšæ˜µç§°
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/friends/ids/12345.xml or
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/friends/ids/12345.xml or
 	 * http://api.twitter.com/statuses/friends/bob.xml
 	 * 
-	 * ¡¡¡¡</br><strong>user_id</strong></br>. Ñ¡Ìî²ÎÊı. Òª»ñÈ¡µÄUID
+	 * ã€€ã€€</br><strong>user_id</strong></br>. é€‰å¡«å‚æ•°. è¦è·å–çš„UID
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/friends/ids.xml?user_id=1401881
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/friends/ids.xml?user_id=1401881
 	 * 
-	 * ¡¡¡¡</br><strong>screen_name</strong></br>. Ñ¡Ìî²ÎÊı. Òª»ñÈ¡µÄÎ¢²©êÇ³Æ
+	 * ã€€ã€€</br><strong>screen_name</strong></br>. é€‰å¡«å‚æ•°. è¦è·å–çš„å¾®åšæ˜µç§°
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/friends/ids.xml?screen_name=101010
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/friends/ids.xml?screen_name=101010
 	 * 
-	 * ¡¡¡¡</br><strong>cursor</strong></br>. Ñ¡Ìî²ÎÊı.
-	 * µ¥Ò³Ö»ÄÜ°üº¬5000¸öid£¬ÎªÁË»ñÈ¡¸ü¶àÔòcursorÄ¬ÈÏ´Ó-1¿ªÊ¼£¬Í¨¹ıÔö¼Ó»ò¼õÉÙcursorÀ´»ñÈ¡¸ü¶àµÄ¹Ø×¢ÁĞ±í
+	 * ã€€ã€€</br><strong>cursor</strong></br>. é€‰å¡«å‚æ•°.
+	 * å•é¡µåªèƒ½åŒ…å«5000ä¸ªidï¼Œä¸ºäº†è·å–æ›´å¤šåˆ™cursoré»˜è®¤ä»-1å¼€å§‹ï¼Œé€šè¿‡å¢åŠ æˆ–å‡å°‘cursoræ¥è·å–æ›´å¤šçš„å…³æ³¨åˆ—è¡¨
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/friends/ids.xml?cursor=-1 Ê¾Àı:
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/friends/ids.xml?cursor=-1 ç¤ºä¾‹:
 	 * http://api.twitter.com/friends/ids.xml?cursor=1300794057949944903
 	 * 
-	 * ¡¡¡¡</br><strong>count</strong></br>. ¿ÉÑ¡²ÎÊı.
-	 * Ã¿´Î·µ»ØµÄ×î´ó¼ÇÂ¼Êı£¨¼´Ò³Ãæ´óĞ¡£©£¬²»´óÓÚ5000£¬Ä¬ÈÏ·µ»Ø500¡£
+	 * ã€€ã€€</br><strong>count</strong></br>. å¯é€‰å‚æ•°.
+	 * æ¯æ¬¡è¿”å›çš„æœ€å¤§è®°å½•æ•°ï¼ˆå³é¡µé¢å¤§å°ï¼‰ï¼Œä¸å¤§äº5000ï¼Œé»˜è®¤è¿”å›500ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/friends/ids.xml?count=200
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/friends/ids.xml?count=200
 	 */
 	public final static String FRIENDS_IDS_SHOW_API = API_ROOT + "friends/ids."
 			+ API_FORMAT;
 
 	/**
-	 * ÓÃÀ´»ñÈ¡Ö¸¶¨µÄÓÃ»§±»¸úËæµÄÓÃ»§id¡£
+	 * ç”¨æ¥è·å–æŒ‡å®šçš„ç”¨æˆ·è¢«è·Ÿéšçš„ç”¨æˆ·idã€‚
 	 * 
-	 * ¡¡¡¡·ÃÎÊµØÖ·£ºhttp://api.twitter.com/followers/ids.format
+	 * ã€€ã€€è®¿é—®åœ°å€ï¼šhttp://api.twitter.com/followers/ids.format
 	 * 
-	 * ¡¡¡¡Ö§³Ö¸ñÊ½£ºxml,json
+	 * ã€€ã€€æ”¯æŒæ ¼å¼ï¼šxml,json
 	 * 
-	 * ¡¡¡¡²ÎÊıÁĞ±í£º
+	 * ã€€ã€€å‚æ•°åˆ—è¡¨ï¼š
 	 * 
-	 * ¡¡¡¡</br><strong>id</strong></br>. Ñ¡Ìî²ÎÊı. Òª»ñÈ¡ºÃÓÑµÄUID»òÎ¢²©êÇ³Æ
+	 * ã€€ã€€</br><strong>id</strong></br>. é€‰å¡«å‚æ•°. è¦è·å–å¥½å‹çš„UIDæˆ–å¾®åšæ˜µç§°
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/followers/ids/12345.xml or
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/followers/ids/12345.xml or
 	 * http://api.twitter.com/statuses/friends/bob.xml
 	 * 
-	 * ¡¡¡¡</br><strong>user_id</strong></br>. Ñ¡Ìî²ÎÊı£¬Òª»ñÈ¡µÄUID
+	 * ã€€ã€€</br><strong>user_id</strong></br>. é€‰å¡«å‚æ•°ï¼Œè¦è·å–çš„UID
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/followers/ids.xml?user_id=1401881
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/followers/ids.xml?user_id=1401881
 	 * 
-	 * ¡¡¡¡</br><strong>screen_name</strong></br>. Ñ¡Ìî²ÎÊı£¬Òª»ñÈ¡µÄÎ¢²©êÇ³Æ
+	 * ã€€ã€€</br><strong>screen_name</strong></br>. é€‰å¡«å‚æ•°ï¼Œè¦è·å–çš„å¾®åšæ˜µç§°
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/followers/ids.xml?screen_name=101010
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/followers/ids.xml?screen_name=101010
 	 * 
-	 * ¡¡¡¡</br><strong>cursor</strong></br>. Ñ¡Ìî²ÎÊı.
-	 * µ¥Ò³Ö»ÄÜ°üº¬5000¸öid£¬ÎªÁË»ñÈ¡¸ü¶àÔòcursorÄ¬ÈÏ´Ó-1¿ªÊ¼£¬Í¨¹ıÔö¼Ó»ò¼õÉÙcursorÀ´»ñÈ¡¸ü¶àµÄ¹Ø×¢ÁĞ±í
+	 * ã€€ã€€</br><strong>cursor</strong></br>. é€‰å¡«å‚æ•°.
+	 * å•é¡µåªèƒ½åŒ…å«5000ä¸ªidï¼Œä¸ºäº†è·å–æ›´å¤šåˆ™cursoré»˜è®¤ä»-1å¼€å§‹ï¼Œé€šè¿‡å¢åŠ æˆ–å‡å°‘cursoræ¥è·å–æ›´å¤šçš„å…³æ³¨åˆ—è¡¨
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/followers/ids.xml?cursor=-1
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/followers/ids.xml?cursor=-1
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/followers/ids.xml?cursor=1300794057949944903
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/followers/ids.xml?cursor=1300794057949944903
 	 * 
-	 * ¡¡¡¡</br><strong>count</strong></br>. ¿ÉÑ¡²ÎÊı.
-	 * Ã¿´Î·µ»ØµÄ×î´ó¼ÇÂ¼Êı£¨¼´Ò³Ãæ´óĞ¡£©£¬²»´óÓÚ5000£¬Ä¬ÈÏ·µ»Ø500¡£
+	 * ã€€ã€€</br><strong>count</strong></br>. å¯é€‰å‚æ•°.
+	 * æ¯æ¬¡è¿”å›çš„æœ€å¤§è®°å½•æ•°ï¼ˆå³é¡µé¢å¤§å°ï¼‰ï¼Œä¸å¤§äº5000ï¼Œé»˜è®¤è¿”å›500ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/followers/ids.xml?count=200
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/followers/ids.xml?count=200
 	 */
 	public final static String FOLLOWERS_IDS_SHOW_API = API_ROOT
 			+ "followers/ids." + API_FORMAT;
 
 	// Account resources
-	// ÓÃ»§ÕÊºÅ·½·¨
+	// ç”¨æˆ·å¸å·æ–¹æ³•
 	/**
-	 * Èç¹ûÓÃ»§Éí·İÑéÖ¤³É¹¦Ôò·µ»Ø http×´Ì¬Îª 200£»Èç¹ûÊÇ²»Ôò·µ»Ø401µÄ×´Ì¬ºÍ´íÎóĞÅÏ¢¡£´Ë·½·¨ÓÃÁËÅĞ¶ÏÓÃ»§Éí·İÊÇ·ñºÏ·¨¡£
+	 * å¦‚æœç”¨æˆ·èº«ä»½éªŒè¯æˆåŠŸåˆ™è¿”å› httpçŠ¶æ€ä¸º 200ï¼›å¦‚æœæ˜¯ä¸åˆ™è¿”å›401çš„çŠ¶æ€å’Œé”™è¯¯ä¿¡æ¯ã€‚æ­¤æ–¹æ³•ç”¨äº†åˆ¤æ–­ç”¨æˆ·èº«ä»½æ˜¯å¦åˆæ³•ã€‚
 	 * 
-	 * ¡¡¡¡·ÃÎÊµØÖ·£ºhttp://api.twitter.com/account/verify_credentials.format
+	 * ã€€ã€€è®¿é—®åœ°å€ï¼šhttp://api.twitter.com/account/verify_credentials.format
 	 * 
-	 * ¡¡¡¡Ö§³Ö¸ñÊ½£ºxml, json
+	 * ã€€ã€€æ”¯æŒæ ¼å¼ï¼šxml, json
 	 * 
-	 * ¡¡¡¡²ÎÊıÁĞ±í£º
+	 * ã€€ã€€å‚æ•°åˆ—è¡¨ï¼š
 	 */
 	public final static String ACCOUNT_VERIFY_CREDENTIALS_SHOW_API = API_ROOT
 			+ "account/verify_credentials." + API_FORMAT;
@@ -641,25 +641,25 @@ public class API {
 			+ "account/rate_limit_status." + API_FORMAT;
 
 	/**
-	 * ×Ô¶¨ÒåÎ¢²©Ò³ÃæµÄ²ÎÊı¡£Ö»»áĞŞ¸Ä²ÎÊı¸üĞÂÏî¡£
+	 * è‡ªå®šä¹‰å¾®åšé¡µé¢çš„å‚æ•°ã€‚åªä¼šä¿®æ”¹å‚æ•°æ›´æ–°é¡¹ã€‚
 	 * 
-	 * ¡¡¡¡·ÃÎÊµØÖ·£ºhttp://api.twitter.com/account/update_profile.format
+	 * ã€€ã€€è®¿é—®åœ°å€ï¼šhttp://api.twitter.com/account/update_profile.format
 	 * 
-	 * ¡¡¡¡Ö§³Ö¸ñÊ½£ºxml, json
+	 * ã€€ã€€æ”¯æŒæ ¼å¼ï¼šxml, json
 	 * 
-	 * ¡¡¡¡²ÎÊıÁĞ±í£º
+	 * ã€€ã€€å‚æ•°åˆ—è¡¨ï¼š
 	 * 
-	 * ¡¡¡¡±ØĞëÓĞÒ»ÏÂ²ÎÊıÖĞµÄÒ»¸ö»ò¶à¸ö£¬²ÎÊıÖµÎª×Ö·û´®. ½øÒ»²½µÄÏŞÖÆ£¬Çë²ÎÔÄÏÂÃæµÄ¸÷¸ö²ÎÊıÃèÊö.
+	 * ã€€ã€€å¿…é¡»æœ‰ä¸€ä¸‹å‚æ•°ä¸­çš„ä¸€ä¸ªæˆ–å¤šä¸ªï¼Œå‚æ•°å€¼ä¸ºå­—ç¬¦ä¸². è¿›ä¸€æ­¥çš„é™åˆ¶ï¼Œè¯·å‚é˜…ä¸‹é¢çš„å„ä¸ªå‚æ•°æè¿°.
 	 * 
-	 * ¡¡¡¡</br><strong>name</strong></br>. êÇ³Æ£¬¿ÉÑ¡²ÎÊı.²»³¬¹ı20¸öºº×Ö
+	 * ã€€ã€€</br><strong>name</strong></br>. æ˜µç§°ï¼Œå¯é€‰å‚æ•°.ä¸è¶…è¿‡20ä¸ªæ±‰å­—
 	 * 
-	 * ¡¡¡¡</br><strong>gender</strong></br> ĞÔ±ğ£¬¿ÉÑ¡²ÎÊı. m,ÄĞ£¬f,Å®¡£
+	 * ã€€ã€€</br><strong>gender</strong></br> æ€§åˆ«ï¼Œå¯é€‰å‚æ•°. m,ç”·ï¼Œf,å¥³ã€‚
 	 * 
-	 * ¡¡¡¡</br><strong>province</strong></br> ¿ÉÑ¡²ÎÊı. ²Î¿¼Ê¡·İ³ÇÊĞ±àÂë±í
+	 * ã€€ã€€</br><strong>province</strong></br> å¯é€‰å‚æ•°. å‚è€ƒçœä»½åŸå¸‚ç¼–ç è¡¨
 	 * 
-	 * ¡¡¡¡</br><strong>city</strong></br> ¿ÉÑ¡²ÎÊı. ²Î¿¼Ê¡·İ³ÇÊĞ±àÂë±í,1000Îª²»ÏŞ
+	 * ã€€ã€€</br><strong>city</strong></br> å¯é€‰å‚æ•°. å‚è€ƒçœä»½åŸå¸‚ç¼–ç è¡¨,1000ä¸ºä¸é™
 	 * 
-	 * ¡¡¡¡</br><strong>description</strong></br>. ¿ÉÑ¡²ÎÊı. ²»³¬¹ı160¸öºº×Ö.
+	 * ã€€ã€€</br><strong>description</strong></br>. å¯é€‰å‚æ•°. ä¸è¶…è¿‡160ä¸ªæ±‰å­—.
 	 */
 	public final static String ACCOUNT_UPDATE_PROFILE_BACKGROUND_IMAGE_API = API_ROOT
 			+ "account/update_profile_background_image." + API_FORMAT;
@@ -668,49 +668,49 @@ public class API {
 			+ "account/update_profile_image." + API_FORMAT;
 
 	// Favorite resources
-	// ÊÕ²ØÏà¹Ø·½·¨
+	// æ”¶è—ç›¸å…³æ–¹æ³•
 	/**
-	 * ·µ»ØÊÚÈ¨ÓÃ»§µÄ×îĞÂµÄ20ÌõÊÕ²ØµÄ×´Ì¬ĞÅÏ¢¡£Ò²¿ÉÒÔÍ¨¹ıid»òÕßÓÃ»§ÃûÀ´Ö¸¶¨Ò»¸öÓÃ»§£¬²éÑ¯Ëû×îĞÂµÄ20ÌõÊÕ²ØµÄ×´Ì¬ĞÅÏ¢¡£
+	 * è¿”å›æˆæƒç”¨æˆ·çš„æœ€æ–°çš„20æ¡æ”¶è—çš„çŠ¶æ€ä¿¡æ¯ã€‚ä¹Ÿå¯ä»¥é€šè¿‡idæˆ–è€…ç”¨æˆ·åæ¥æŒ‡å®šä¸€ä¸ªç”¨æˆ·ï¼ŒæŸ¥è¯¢ä»–æœ€æ–°çš„20æ¡æ”¶è—çš„çŠ¶æ€ä¿¡æ¯ã€‚
 	 * 
-	 * ¡¡¡¡·ÃÎÊµØÖ·£ºhttp://api.twitter.com/favorites.format
+	 * ã€€ã€€è®¿é—®åœ°å€ï¼šhttp://api.twitter.com/favorites.format
 	 * 
-	 * ¡¡¡¡Ö§³Ö¸ñÊ½£ºxml, json, rss, atom
+	 * ã€€ã€€æ”¯æŒæ ¼å¼ï¼šxml, json, rss, atom
 	 * 
-	 * ¡¡¡¡²ÎÊıÁĞ±í£º
+	 * ã€€ã€€å‚æ•°åˆ—è¡¨ï¼š
 	 * 
-	 * ¡¡¡¡</br><strong>page</strong></br>£º ¿ÉÑ¡²ÎÊı. ·µ»Ø½á¹ûµÄÒ³ĞòºÅ¡£×¢Òâ£ºÓĞ·ÖÒ³ÏŞÖÆ¡£
+	 * ã€€ã€€</br><strong>page</strong></br>ï¼š å¯é€‰å‚æ•°. è¿”å›ç»“æœçš„é¡µåºå·ã€‚æ³¨æ„ï¼šæœ‰åˆ†é¡µé™åˆ¶ã€‚
 	 * 
-	 * ¡¡¡¡Ê¾Àı: http://api.twitter.com/favorites/11075.xml?page=3
+	 * ã€€ã€€ç¤ºä¾‹: http://api.twitter.com/favorites/11075.xml?page=3
 	 */
 	public final static String FAVORITES_API = API_ROOT + "favorites."
 			+ API_FORMAT;
 
 	/**
-	 * ÊÕ²ØÒ»Ìõ×´Ì¬ĞÅÏ¢POSTÌá½»
+	 * æ”¶è—ä¸€æ¡çŠ¶æ€ä¿¡æ¯POSTæäº¤
 	 * 
-	 * ¡¡¡¡·ÃÎÊµØÖ·£º
+	 * ã€€ã€€è®¿é—®åœ°å€ï¼š
 	 * 
-	 * ¡¡¡¡http://api.twitter.com/favorites/create.format
+	 * ã€€ã€€http://api.twitter.com/favorites/create.format
 	 * 
-	 * ¡¡¡¡Ö§³Ö¸ñÊ½£ºxml, json
+	 * ã€€ã€€æ”¯æŒæ ¼å¼ï¼šxml, json
 	 * 
-	 * ¡¡¡¡²ÎÊıÁĞ±í£º
+	 * ã€€ã€€å‚æ•°åˆ—è¡¨ï¼š
 	 * 
-	 * ¡¡¡¡</br><strong>id</strong></br> ±ØĞë£¬ÊÚÈ¨ÓÃ»§ÒªÊÕ²ØµÄ×´Ì¬ĞÅÏ¢id¡£
+	 * ã€€ã€€</br><strong>id</strong></br> å¿…é¡»ï¼Œæˆæƒç”¨æˆ·è¦æ”¶è—çš„çŠ¶æ€ä¿¡æ¯idã€‚
 	 */
 	public final static String FAVORITES_CREATE_API = API_ROOT
 			+ "favorites/create." + API_FORMAT;
 
 	/**
-	 * É¾³ıÊÚÈ¨ÓÃ»§ÊÕ²ØµÄÒ»Ìõ×´Ì¬ĞÅÏ¢
+	 * åˆ é™¤æˆæƒç”¨æˆ·æ”¶è—çš„ä¸€æ¡çŠ¶æ€ä¿¡æ¯
 	 * 
-	 * ¡¡¡¡·ÃÎÊµØÖ·£ºhttp://api.twitter.com/favorites/destroy/id.format
+	 * ã€€ã€€è®¿é—®åœ°å€ï¼šhttp://api.twitter.com/favorites/destroy/id.format
 	 * 
-	 * ¡¡¡¡Ö§³Ö¸ñÊ½£ºxml, json
+	 * ã€€ã€€æ”¯æŒæ ¼å¼ï¼šxml, json
 	 * 
-	 * ¡¡¡¡²ÎÊıÁĞ±í£º
+	 * ã€€ã€€å‚æ•°åˆ—è¡¨ï¼š
 	 * 
-	 * ¡¡¡¡</br><strong>id</strong></br> ÊÚÈ¨ÓÃ»§ÊÕ²ØµÄ×´Ì¬ĞÅÏ¢id¡£
+	 * ã€€ã€€</br><strong>id</strong></br> æˆæƒç”¨æˆ·æ”¶è—çš„çŠ¶æ€ä¿¡æ¯idã€‚
 	 */
 	public final static String FAVORITES_DESTROY_API = API_ROOT
 			+ "favorites/destroy." + API_FORMAT;
@@ -862,7 +862,7 @@ public class API {
 	public final static String OAUTH_ACCESS_TOKEN_API = API_ROOT
 			+ "oauth/authorize";
 
-	// ÒÔÏÂÊÇstatusnet Ë½ÓĞAPI
+	// ä»¥ä¸‹æ˜¯statusnet ç§æœ‰API
 	/**
 	 * GET Shows a group's timeline. Similar to other timeline resources
 	 * params:page (int), count (int), max_id (int), since_id (int), format

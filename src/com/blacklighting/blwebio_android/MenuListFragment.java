@@ -19,7 +19,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 /**
- * @author ÑÇ¾ü
+ * @author äºšå†›
  * 
  */
 public class MenuListFragment extends Fragment {
@@ -73,14 +73,14 @@ public class MenuListFragment extends Fragment {
 	}
 
 	/**
-	 * ´ÓSQLiteÖĞ»Ö¸´Î¢²©·Ö×é
+	 * ä»SQLiteä¸­æ¢å¤å¾®åšåˆ†ç»„
 	 */
 	protected void recoveryWeiboCategoryFormDB() {
 
 	}
 
 	/**
-	 * @author ÑÇ¾ü Î¢²©·Ö×éÁĞ±íÀà
+	 * @author äºšå†› å¾®åšåˆ†ç»„åˆ—è¡¨ç±»
 	 */
 	private class SampleItem {
 		public String tag;
@@ -91,7 +91,7 @@ public class MenuListFragment extends Fragment {
 	}
 
 	/**
-	 * @author ÑÇ¾ü Î¢²©·Ö×éÁĞ±íÊÊÅäÆ÷
+	 * @author äºšå†› å¾®åšåˆ†ç»„åˆ—è¡¨é€‚é…å™¨
 	 */
 	public class MenuListAdaper extends BaseAdapter {
 		Context context;
@@ -122,36 +122,18 @@ public class MenuListFragment extends Fragment {
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			if (convertView == null) {
-//				if (position != 0) {
-//					convertView = LayoutInflater.from(context).inflate(
-//							R.layout.menu_row, null);
-//				} else {
-//					convertView = LayoutInflater.from(context).inflate(
-//							R.layout.acount_photo_row, null);
-//				}
 				convertView = LayoutInflater.from(context).inflate(
 						R.layout.menu_row, null);
 			}
-
 			TextView title = (TextView) convertView
 					.findViewById(R.id.row_title);
 			title.setText(weiboCategories.get(position).tag);
-			
-//			if (position != 0) {
-//				TextView title = (TextView) convertView
-//						.findViewById(R.id.row_title);
-//				title.setText(weiboCategories.get(position).tag);
-//			} else {
-//				ImageView accountPhoto = (ImageView) convertView
-//						.findViewById(R.id.accountPhoto);
-//
-//			}
 			return convertView;
 		}
 	}
 	/**
-	 * @author ÑÇ¾ü
-	 *	´¦Àíµã»÷²Ëµ¥µÄ½Ó¿ÚÀà
+	 * @author äºšå†›
+	 *	å¤„ç†ç‚¹å‡»èœå•çš„æ¥å£ç±»
 	 */
 	public interface OnMenuIteamClickListener{
 		public void onMenuIteamClick(AdapterView<?> l,View v ,int position,long id);

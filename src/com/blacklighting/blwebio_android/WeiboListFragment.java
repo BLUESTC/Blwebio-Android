@@ -22,7 +22,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 
 /**
- * @author ÑÇ¾ü
+ * @author äºšå†›
  * 
  */
 public class WeiboListFragment extends Fragment implements OnRefreshListener<ListView>{
@@ -40,13 +40,12 @@ public class WeiboListFragment extends Fragment implements OnRefreshListener<Lis
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-//		TextView rootView=new TextView(getActivity());
-//		rootView.setText("HI");
 		
 		View rootView=inflater.inflate(R.layout.weibo_list_frame, container,false);
 		mPullRefreshListView=(PullToRefreshListView) rootView.findViewById(R.id.my_list);
 		mPullRefreshListView.setEmptyView(rootView.findViewById(R.id.emptyText));
 		mPullRefreshListView.setOnRefreshListener(this);
+		
 		// You can also just use mPullRefreshListFragment.getListView()
 		ListView actualListView = mPullRefreshListView.getRefreshableView();
 		mListItems = new LinkedList<String>();
