@@ -8,6 +8,7 @@ package com.blacklighting.blwebio_android.model;
  *
  */
 public class Weibo {
+	//这是
 	String text;
 	boolean truncated;
 	String caeated_at;
