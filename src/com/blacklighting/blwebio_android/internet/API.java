@@ -860,7 +860,7 @@ public class API {
 	 * r a
 	 */
 	public final static String OAUTH_ACCESS_TOKEN_API = API_ROOT
-			+ "oauth/authorize";
+			+ "oauth/access_token";
 
 	// 以下是statusnet 私有API
 	/**
