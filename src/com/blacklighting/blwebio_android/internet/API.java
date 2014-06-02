@@ -11,8 +11,12 @@ package com.blacklighting.blwebio_android.internet;
  * @see http://status.net/wiki/Twitter-compatible_API
  */
 public class API {
+	public final static String CONSUMER_KEY="542e73764c164bb898960c16f5ff5d78";
+	public final static String CONSUMER_SECRET="e79cf868071ab74b1932f0e6dfdcf09b";
+	
 	public final static String API_FORMAT = "json";
-	public final static String API_ROOT = "http://studio.scie.in/blacklighting/BLK/statusnet-1.1.1/index.php/api/";
+//	public final static String API_ROOT = "http://studio.scie.in/blacklighting/BLK/statusnet-1.1.1/index.php/api/";
+	public final static String API_ROOT = "http://10.0.2.2/statusnet/index.php/api/";
 
 	// 以下是twitter 移植API，注意，有些没有实现
 	// 详见 http://status.net/wiki/Twitter-compatible_API

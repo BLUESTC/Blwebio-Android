@@ -6,6 +6,7 @@ import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu.CanvasTransformer;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
@@ -59,6 +60,12 @@ public class MainActivity extends SlidingFragmentActivity implements
 		setSlidingActionBarEnabled(true);
 		sm.setBehindScrollScale(0.0f);
 		sm.setBehindCanvasTransformer(mTransformer);
+		
+		Intent i=new Intent(this,OauthActivity.class);
+		i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		startActivity(i);
+
 	}
 
 	@Override
@@ -80,7 +87,8 @@ public class MainActivity extends SlidingFragmentActivity implements
 	@Override
 	public void onMenuIteamClick(AdapterView<?> l, View v, int position, long id) {
 		// TODO Auto-generated method stub
-		Toast.makeText(getApplicationContext(), ""+position, Toast.LENGTH_SHORT).show();
+		Toast.makeText(getApplicationContext(), "" + position,
+				Toast.LENGTH_SHORT).show();
 	}
 
 }
